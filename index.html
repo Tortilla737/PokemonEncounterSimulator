@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style.css">
+  </head>
+  <body>
+    <h1 style="text-align: center;">Pokémon encounter simulator</h1>
+    <div class="grid-container">
+      <p class="description-small">Biom:<br>Wähle ein Biom, in dem ihr euch aufhaltet.</p>
+      <p class="description-small">Biom 2:<br>Ein zweites Biom schrängt die Suche ein. Es kommen nur Pokémon in Frage, die in beiden Biomen vorkommen.</p>
+      <p class="description-small">Wetter:<br>Wähle eine besondere Wetterlage.<br>Dies schließt nur Pokémon ein, die sich bei diesem Wetter wohl fühlen.</p>
+      <p class="description-small">Tageszeit:<br>Pokémon, die am Tag aktiv sind, werden nachts ausgeschlossen und umgekehrt. Viele Pokémon kann man jedoch zu jeder Tageszeit antreffen.</p>
+      <p class="description-small">Anzahl:<br>Wähle wie viele wilde Pokémon auftauchen.</p>
+      <select id="biomsDrop1">
+        <option value="Egal">Egal</option>
+        <optgroup label="Urban">
+          <option value="Stadt">Stadt</option>
+          <option value="Industrie">Industrie</option>
+          <option value="Park">Park</option>
+        </optgroup>
+        <optgroup label="Aquatisch">
+          <option value="See">See</option>
+          <option value="Ozean">Ozean</option>
+          <option value="Strand">Strand</option>
+        </optgroup>
+        <optgroup label="Flora">
+          <option value="Wald">Wald</option>
+          <option value="Wiese">Wiese</option>
+          <option value="Sumpf">Sumpf</option>
+        </optgroup>
+        <optgroup label="Gebirge">
+          <option value="Berg">Berg</option>
+          <option value="Höhle">Höhle</option>
+          <option value="Untergrund">Untergrund</option>
+        </optgroup>
+        <optgroup label="Ödland">
+          <option value="Wüste">Wüste</option>
+          <option value="Geröll">Geröll</option>
+          <option value="Ruine">Ruine</option>
+        </optgroup>
+      </select> 
+      <select id="biomsDrop2">
+        <option value="Egal">Egal</option>
+        <optgroup label="Urban">
+          <option value="Stadt">Stadt</option>
+          <option value="Industrie">Industrie</option>
+          <option value="Park">Park</option>
+        </optgroup>
+        <optgroup label="Aquatisch">
+          <option value="See">See</option>
+          <option value="Ozean">Ozean</option>
+          <option value="Strand">Strand</option>
+        </optgroup>
+        <optgroup label="Flora">
+          <option value="Wald">Wald</option>
+          <option value="Wiese">Wiese</option>
+          <option value="Sumpf">Sumpf</option>
+        </optgroup>
+        <optgroup label="Gebirge">
+          <option value="Berg">Berg</option>
+          <option value="Höhle">Höhle</option>
+          <option value="Untergrund">Untergrund</option>
+        </optgroup>
+        <optgroup label="Ödland">
+          <option value="Wüste">Wüste</option>
+          <option value="Geröll">Geröll</option>
+          <option value="Ruine">Ruine</option>
+        </optgroup>
+      </select> 
+      <select id="weatherDrop">
+        <option value="Egal">Egal</option>
+        <option value="Sonne">Sonne</option>
+        <option value="Regen">Regen</option>
+        <option value="Schnee">Schnee</option>
+      </select> 
+      <select id="daytimeDrop">
+        <option value="Egal">Egal</option>
+        <option value="Tag">Tag</option>
+        <option value="Nacht">Nacht</option>
+      </select> 
+      <input type="number" id="numberField" name="Number Field" min="1" value="1">
+      <select id="typeDrop">
+        <option value="Egal">Typ</option>
+        <option value="Normal">Normal</option>
+        <option value="Kampf">Kampf</option>
+        <option value="Flug">Flug</option>
+        <option value="Gift">Gift</option>
+        <option value="Boden">Boden</option>
+        <option value="Gestein">Gestein</option>
+        <option value="Käfer">Käfer</option>
+        <option value="Geist">Geist</option>
+        <option value="Stahl">Stahl</option>
+        <option value="Feuer">Feuer</option>
+        <option value="Wasser">Wasser</option>
+        <option value="Pflanze">Pflanze</option>
+        <option value="Elektro">Elektro</option>
+        <option value="Psycho">Psycho</option>
+        <option value="Eis">Eis</option>
+        <option value="Drache">Drache</option>
+        <option value="Unlicht">Unlicht</option>
+        <option value="Fee">Fee</option>
+      </select>
+      <select id="rankDrop">
+        <option value="Egal">Rang</option>
+        <option value="Starter">Starter</option>
+        <option value="Beginner">Beginner</option>
+        <option value="Amateur">Amateur</option>
+        <option value="Ace">Ace</option>
+        <option value="Pro">Pro</option>
+      </select>
+    </div>
+    
+    <div align="center" style="margin: 20px">
+      <div class="button button1">Los geht's!</div>
+      <div class="button button2">Alle anzeigen</div>
+    </div>
+    <div id="listSpace"></div>
+    <div id="descriptions">
+      <div class="description-box" style="background-color:#dcdcdc">
+        <p><strong>Stadt:</strong><br>In der Stadt haben Taubsis und Rattfratz' gelernt neben und mit Menschen zu leben. Hier findet man viele Pokémon die die Gesellschaft von Menschen genießen und sich an kleine wie große Städte angepasst haben.</p>
+        <p><strong>Industrie:</strong><br>Fabriken, Schrottplätze und Kraftwerke sind beliebt bei Elektro-Pokémon und Außenseitern. Manchmal verwirrt sich ein entflohenes oder ausgesetztes Pokémon hierher.</p>
+        <p><strong>Park:</strong><br>Von Menschenhand angelegte Parks mit Springbrunnen, Blumenwiesen oder Seen und kleinen Wäldern, Stadt Pokémon sowie zutrauliche wilde Pokémon treffen hier aufeinander.</p>
+      </div>
+      <div class="description-box" style="background-color:#b0c3cd">
+        <p><strong>See:</strong><br>Ruhige Quellen in verwunschenen Wäldern, durch Wiesen plätschernde Bäche oder reißende Ströme, die meisten entspringen oder münden in großen Süßwasser Seen.</p>
+        <p><strong>Ozean:</strong><br>Die unendlichen Weiten des Ozeans, tausende Tonnen an Meerwasser, nur gelegentlich unterbrochen von kleinen Inseln, Riffen oder Felsen. Niemand weiß wie viele noch unbekannte Pokémon sich in den Tiefen des Ozeans verbergen.</p>
+        <p><strong>Strand:</strong><br>Geprägt von sandigen Stränden oder Felsklippen, der Übergang zwischen Meer und Landmasse erscheint schmal, aber bietet einen Lebensraum denjenigen Pokémon, die die salzige Wassernähe zum Ozean suchen, ohne auf festen Untergrund verzichten zu wollen.</p>
+      </div>
+      <div class="description-box" style="background-color:#b6cdb0">
+        <p><strong>Wald:</strong><br>Wälder bieten vielen eine Zuflucht mit dichten Blätterkronen oben und Sträuchern und Buschwerk unten. Egal ob Nadel-, Laub- oder Mischwald, ob tropisch oder boreal, Wälder sind so mannigfaltig wie ihre Bewohner.</p>
+        <p><strong>Wiese:</strong><br>Hügellandschaften, wilde Blumenwiesen oder grünes Flachland, das wohl mildeste Terrain in dem sich wilde Pokémon aufhalten können.</p>
+        <p><strong>Sumpf:</strong><br>Sümpfe sind ein abwechslungsreiches Biotop. Neben Moor Ödland, dass nur in flachen Gegenden vorkommt, gibt es nährstoffreiche Sümpfe, durchzogen von Mangroven und anderen Wäldern, mit steigenden und sinkenden Wasserpegeln und Röhricht-Landschaften, die in der Nähe von Ufern oder Brackgewässern entstehen.</p>
+      </div>
+      <div class="description-box" style="background-color:#cdc1b0">
+        <p><strong>Berg:</strong><br>Von den eisigen Bergspitzen, über Schluchten und zerklüftetes Gebiet, bis hinunter ins Tal, in den Bergen finden eine Vielzahl an Überlebensspezialisten ein Zuhause. </p>
+        <p><strong>Höhle:</strong><br>Höhlen kommen einzeln als Übernachtungsstätte für Ursaringe vor, oder als komplexe Systeme, die einen Übergang zwischen Außenwelt und Untergrund darstellen. Sie bieten Schutz vor Sonne und Schnee und schwankenden Temperaturen.</p>
+        <p><strong>Untergrund:</strong><br>Unterhalb von Städten befinden sich Kanalisationen, diese wirken wie ein schlechter Lebensraum, aber auch sie sind nicht unbewohnt. Ebenso wie tiefe Höhlensysteme weit unter der Erde sind sie eine Nische für speziell angepasste Pokémon. </p>
+      </div>
+      <div class="description-box" style="background-color:#cdb0b0">
+        <p><strong>Wüste:</strong><br>Wüsten haben vor allem eines gemeinsam, sie sind trocken und karg. Neben der bekannten Sandwüste, kommen auch Kies-, Stein- oder Salzwüsten vor. Für viele Pokémon und Menschen ist es undenkbar hier zu leben, aber für manche Pokémon sind sie genau der richtige Ort, um sich wohlzufühlen.</p>
+        <p><strong>Geröll:</strong><br>Steppen und Gerölllandschaften sind nicht ganz so arm an Vegetation wie Wüsten und bilden oft einen Übergang zu reicheren Biotopen. Sie bestehen aus Silikat-, Schiefer- oder Kalkgestein sowie Schutt und groben Steinfelsen. In Felsnischen und an Bergwände klammern sich kleine Pflanzen mit genug Kraft, um Wind und Wetter zu überstehen.</p>
+        <p><strong>Ruine:</strong><br>Verlassene menschliche Stätten, zurückerobert von Natur und wilden Pokémon, Ruinen sind zum einem mysteriös, zum anderen beklemmend und gruselig.</p>
+      </div>
+    </div>
+    <script type="module" src="src/script.js"></script>
+  </body>
+</html>

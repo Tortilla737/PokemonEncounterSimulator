@@ -1,0 +1,160 @@
+body {
+  background: grey;
+  padding: 0 24px;
+  margin: 0;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+h1 {
+  color: #fcbe24;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+select {
+  padding: 5px;
+  min-width: 170px;
+  font-size: 1rem;
+}
+input {
+  padding: 5px;
+  max-width: 170px;
+  font-size: 1rem;
+}
+.grid-container {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+}
+.pkmn-box {
+  max-width: 650px;
+  padding: 10px 20px 10px 20px;
+  margin: 20px auto;
+  border-radius: 30px;
+  background-color: #eeeeee;
+  border: 2px solid #313131;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  display: flex;
+  align-items: center
+}
+.inner-box{
+  display: grid;
+  gap: 2px;
+  grid-template-columns: repeat(2, 1fr);
+  margin-left: auto;
+}
+.description-box {
+  border-radius: 10px;
+  max-width: 1000px;
+  padding: 10px;
+  margin: 5px auto;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+.description-small{
+  font-size: 9pt;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 5px auto;
+  overflow: hidden;
+  background-color: #eeeeee;
+}
+.pkmn-name {
+  font-size: 2rem;
+  font-weight: normal;
+  color: #343434;
+  margin-right: 20px;
+}
+.english-name {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #808080;
+  margin-right: 20px;
+}
+.shiny-text{
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fcbe24;
+}
+.pkmn-photo {
+  float: left;
+  margin-right: 15px;
+}
+.rank-photo {
+  max-width: 40px;
+  min-width: 30px;
+}
+.button {
+  border-radius: 15px;
+  border: none;
+  color: white;
+  background-color: #086197;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.Normal{
+  background-color: #DDDDDD;
+}
+.Kampf{
+  background-color: #F7D3DA;
+}
+.Flug{
+  background-color: #E6EDFA;
+}
+.Gift{
+  background-color: #DFB9E9;
+}
+.Boden{
+  background-color: #E4C1AF;
+}
+.Gestein{
+  background-color: #E1D9BE;
+}
+.Käfer{
+  background-color: #DCEDB2;
+}
+.Geist{
+  background-color: #C9CEE8;
+}
+.Stahl{
+  background-color: #CDE0E5;
+}
+.Feuer{
+  background-color: #FDD5AB;
+}
+.Wasser{
+  background-color: #ADD0F0;
+}
+.Pflanze{
+  background-color: #CAE4B5;
+}
+.Elektro{
+  background-color: #FAEFB5;
+}
+.Psycho{
+  background-color: #FEC0E1;
+}
+.Eis{
+  background-color: #D1EFEB;
+}
+.Drache{
+  background-color: #98C9FB;
+}
+.Unlicht{
+  background-color: #BBBAC1;
+}
+.Fee{
+  background-color: #F6D6FA;
+}
