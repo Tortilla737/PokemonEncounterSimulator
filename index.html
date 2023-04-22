@@ -1,115 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Pokémon encounter simulator</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/style.css">
   </head>
   <body>
     <h1 style="text-align: center;">Pokémon encounter simulator</h1>
-    <div class="grid-container">
-      <p class="description-small">Biom:<br>Wähle ein Biom, in dem ihr euch aufhaltet.</p>
-      <p class="description-small">Biom 2:<br>Ein zweites Biom schrängt die Suche ein. Es kommen nur Pokémon in Frage, die in beiden Biomen vorkommen.</p>
-      <p class="description-small">Wetter:<br>Wähle eine besondere Wetterlage.<br>Dies schließt nur Pokémon ein, die sich bei diesem Wetter wohl fühlen.</p>
-      <p class="description-small">Tageszeit:<br>Pokémon, die am Tag aktiv sind, werden nachts ausgeschlossen und umgekehrt. Viele Pokémon kann man jedoch zu jeder Tageszeit antreffen.</p>
-      <p class="description-small">Anzahl:<br>Wähle wie viele wilde Pokémon auftauchen.</p>
-      <select id="biomsDrop1">
-        <option value="Egal">Egal</option>
-        <optgroup label="Urban">
-          <option value="Stadt">Stadt</option>
-          <option value="Industrie">Industrie</option>
-          <option value="Park">Park</option>
-        </optgroup>
-        <optgroup label="Aquatisch">
-          <option value="See">See</option>
-          <option value="Ozean">Ozean</option>
-          <option value="Strand">Strand</option>
-        </optgroup>
-        <optgroup label="Flora">
-          <option value="Wald">Wald</option>
-          <option value="Wiese">Wiese</option>
-          <option value="Sumpf">Sumpf</option>
-        </optgroup>
-        <optgroup label="Gebirge">
-          <option value="Berg">Berg</option>
-          <option value="Höhle">Höhle</option>
-          <option value="Untergrund">Untergrund</option>
-        </optgroup>
-        <optgroup label="Ödland">
-          <option value="Wüste">Wüste</option>
-          <option value="Geröll">Geröll</option>
-          <option value="Ruine">Ruine</option>
-        </optgroup>
-      </select> 
-      <select id="biomsDrop2">
-        <option value="Egal">Egal</option>
-        <optgroup label="Urban">
-          <option value="Stadt">Stadt</option>
-          <option value="Industrie">Industrie</option>
-          <option value="Park">Park</option>
-        </optgroup>
-        <optgroup label="Aquatisch">
-          <option value="See">See</option>
-          <option value="Ozean">Ozean</option>
-          <option value="Strand">Strand</option>
-        </optgroup>
-        <optgroup label="Flora">
-          <option value="Wald">Wald</option>
-          <option value="Wiese">Wiese</option>
-          <option value="Sumpf">Sumpf</option>
-        </optgroup>
-        <optgroup label="Gebirge">
-          <option value="Berg">Berg</option>
-          <option value="Höhle">Höhle</option>
-          <option value="Untergrund">Untergrund</option>
-        </optgroup>
-        <optgroup label="Ödland">
-          <option value="Wüste">Wüste</option>
-          <option value="Geröll">Geröll</option>
-          <option value="Ruine">Ruine</option>
-        </optgroup>
-      </select> 
-      <select id="weatherDrop">
-        <option value="Egal">Egal</option>
-        <option value="Sonne">Sonne</option>
-        <option value="Regen">Regen</option>
-        <option value="Schnee">Schnee</option>
-      </select> 
-      <select id="daytimeDrop">
-        <option value="Egal">Egal</option>
-        <option value="Tag">Tag</option>
-        <option value="Nacht">Nacht</option>
-      </select> 
-      <input type="number" id="numberField" name="Number Field" min="1" value="1">
-      <select id="typeDrop">
-        <option value="Egal">Typ</option>
-        <option value="Normal">Normal</option>
-        <option value="Kampf">Kampf</option>
-        <option value="Flug">Flug</option>
-        <option value="Gift">Gift</option>
-        <option value="Boden">Boden</option>
-        <option value="Gestein">Gestein</option>
-        <option value="Käfer">Käfer</option>
-        <option value="Geist">Geist</option>
-        <option value="Stahl">Stahl</option>
-        <option value="Feuer">Feuer</option>
-        <option value="Wasser">Wasser</option>
-        <option value="Pflanze">Pflanze</option>
-        <option value="Elektro">Elektro</option>
-        <option value="Psycho">Psycho</option>
-        <option value="Eis">Eis</option>
-        <option value="Drache">Drache</option>
-        <option value="Unlicht">Unlicht</option>
-        <option value="Fee">Fee</option>
-      </select>
-      <select id="rankDrop">
-        <option value="Egal">Rang</option>
-        <option value="Starter">Starter</option>
-        <option value="Beginner">Beginner</option>
-        <option value="Amateur">Amateur</option>
-        <option value="Ace">Ace</option>
-        <option value="Pro">Pro</option>
-      </select>
+    <div class="flex-container">
+      <div class="flex-item">
+        <p class="description-small">Biom:<br>Wähle ein Biom, in dem ihr euch aufhaltet.</p>
+        <select id="biomsDrop1">
+          <option value="Egal">Biom 1</option>
+          <optgroup label="Urban">
+            <option value="Stadt">Stadt</option>
+            <option value="Industrie">Industrie</option>
+            <option value="Park">Park</option>
+          </optgroup>
+          <optgroup label="Aquatisch">
+            <option value="See">See</option>
+            <option value="Ozean">Ozean</option>
+            <option value="Strand">Strand</option>
+          </optgroup>
+          <optgroup label="Flora">
+            <option value="Wald">Wald</option>
+            <option value="Wiese">Wiese</option>
+            <option value="Sumpf">Sumpf</option>
+          </optgroup>
+          <optgroup label="Gebirge">
+            <option value="Berg">Berg</option>
+            <option value="Höhle">Höhle</option>
+            <option value="Untergrund">Untergrund</option>
+          </optgroup>
+          <optgroup label="Ödland">
+            <option value="Wüste">Wüste</option>
+            <option value="Geröll">Geröll</option>
+            <option value="Ruine">Ruine</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="flex-item">
+        <p class="description-small">Biom 2:<br>Ein zweites Biom schrängt die Suche ein. Es kommen nur Pokémon in Frage, die in beiden Biomen vorkommen.</p>
+        <select id="biomsDrop2">
+          <option value="Egal">Biom 2</option>
+          <optgroup label="Urban">
+            <option value="Stadt">Stadt</option>
+            <option value="Industrie">Industrie</option>
+            <option value="Park">Park</option>
+          </optgroup>
+          <optgroup label="Aquatisch">
+            <option value="See">See</option>
+            <option value="Ozean">Ozean</option>
+            <option value="Strand">Strand</option>
+          </optgroup>
+          <optgroup label="Flora">
+            <option value="Wald">Wald</option>
+            <option value="Wiese">Wiese</option>
+            <option value="Sumpf">Sumpf</option>
+          </optgroup>
+          <optgroup label="Gebirge">
+            <option value="Berg">Berg</option>
+            <option value="Höhle">Höhle</option>
+            <option value="Untergrund">Untergrund</option>
+          </optgroup>
+          <optgroup label="Ödland">
+            <option value="Wüste">Wüste</option>
+            <option value="Geröll">Geröll</option>
+            <option value="Ruine">Ruine</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="flex-item">
+        <p class="description-small">Wetter:<br>Wähle eine besondere Wetterlage.<br>Dies schließt nur Pokémon ein, die sich bei diesem Wetter wohl fühlen.</p>
+        <select id="weatherDrop">
+          <option value="Egal">Wetter</option>
+          <option value="Sonne">Sonne</option>
+          <option value="Regen">Regen</option>
+          <option value="Schnee">Schnee</option>
+        </select>
+      </div>
+      <div class="flex-item">
+        <p class="description-small">Tageszeit:<br>Pokémon, die am Tag aktiv sind, werden nachts ausgeschlossen und umgekehrt. Viele Pokémon kann man jedoch zu jeder Tageszeit antreffen.</p>
+        <select id="daytimeDrop">
+          <option value="Egal">Tageszeit</option>
+          <option value="Tag">Tag</option>
+          <option value="Nacht">Nacht</option>
+        </select>
+      </div>
+      <div class="flex-item">
+        <p class="description-small">Anzahl:<br>Wähle wie viele wilde Pokémon auftauchen.</p>
+        <input type="number" id="numberField" name="Number Field" min="1" value="1">
+      </div>
+      <div class="flex-item">
+        <select id="typeDrop">
+          <option value="Egal">Typ</option>
+          <option value="Normal">Normal</option>
+          <option value="Kampf">Kampf</option>
+          <option value="Flug">Flug</option>
+          <option value="Gift">Gift</option>
+          <option value="Boden">Boden</option>
+          <option value="Gestein">Gestein</option>
+          <option value="Käfer">Käfer</option>
+          <option value="Geist">Geist</option>
+          <option value="Stahl">Stahl</option>
+          <option value="Feuer">Feuer</option>
+          <option value="Wasser">Wasser</option>
+          <option value="Pflanze">Pflanze</option>
+          <option value="Elektro">Elektro</option>
+          <option value="Psycho">Psycho</option>
+          <option value="Eis">Eis</option>
+          <option value="Drache">Drache</option>
+          <option value="Unlicht">Unlicht</option>
+          <option value="Fee">Fee</option>
+        </select>
+      </div>
+      <div class="flex-item">
+        <select id="rankDrop">
+          <option value="Egal">Rang</option>
+          <option value="Starter">Starter</option>
+          <option value="Beginner">Beginner</option>
+          <option value="Amateur">Amateur</option>
+          <option value="Ace">Ace</option>
+          <option value="Pro">Pro</option>
+        </select>
+      </div>
     </div>
     
     <div align="center" style="margin: 20px">
@@ -144,6 +159,6 @@
         <p><strong>Ruine:</strong><br>Verlassene menschliche Stätten, zurückerobert von Natur und wilden Pokémon, Ruinen sind zum einem mysteriös, zum anderen beklemmend und gruselig.</p>
       </div>
     </div>
-    <script type="module" src="src/script.js"></script>
+    <script src="src/script.js"></script>
   </body>
 </html>

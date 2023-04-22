@@ -51,14 +51,20 @@ function pokemonTemplate(pkmn){
   return `
   <div class="pkmn-box ${pkmn.type1}">
     <img class="pkmn-photo" src="./pics/${pkmn.number}.png">
-    <h2 class="english-name">#${pkmn.number}</h2>
-    <h2 class="pkmn-name">${pkmn.name}</h2>
-    <h1 class="english-name">${pkmn.nameEnglish}</h1>
-    <div class="inner-box">
-      <img class="rank-photo" src="./icons/${pkmn.rank}.svg">
-      <p>${pkmn.rank}</p>
-      <img class="rank-photo" src="./icons/${pkmn.type1}.svg">
-      <p>${pkmn.type1}</p>
+    <div class="pkmn-text-box">
+      <h2 class="english-name">#${pkmn.number}</h2>
+      <h2 class="pkmn-name">${pkmn.name}</h2>
+      <h1 class="english-name">${pkmn.nameEnglish}</h1>
+    </div>
+    <div class="pkmn-right-box">
+      <div class="rank-box">
+        <img class="rank-photo" src="./icons/${pkmn.rank}.svg">
+        <p class="english-name">${pkmn.rank}</p>
+      </div>
+      <div class="type-box">
+        <img class="rank-photo" src="./icons/${pkmn.type1}.svg">
+        <p class="english-name">${pkmn.type1}</p>
+      </div>
       ${checkType2(pkmn)}
     </div>
   </div>
@@ -67,20 +73,24 @@ function pokemonTemplate(pkmn){
 
 function pokemonRandomTemplate(pkmn){
   return `
-  <div class="pkmn-box">
+  <div class="pkmn-box ${pkmn.type1}">
     <img class="pkmn-photo" src="./pics/${pkmn.number}.png">
-    <h2 class="english-name">#${pkmn.number}</h2>
-    <h2 class="pkmn-name">${pkmn.name}</h2>
-    <h2 class="english-name">${gender(pkmn)}</h2>
-    <h1 class="english-name">${pkmn.nameEnglish}</h1>
-    <div>
+    <div class="pkmn-text-box">
+      <h2 class="english-name">#${pkmn.number}</h2>
+      <h2 class="pkmn-name">${pkmn.name}</h2>
+      <h2 class="english-name">${gender(pkmn)}</h2>
+      <h1 class="english-name">${pkmn.nameEnglish}</h1>
       ${checkStatus(pkmn)}
     </div>
-    <div class="inner-box">
-      <img class="rank-photo" src="./icons/${pkmn.rank}.svg">
-      <p>${pkmn.rank}</p>
-      <img class="rank-photo" src="./icons/${pkmn.type1}.svg">
-      <p>${pkmn.type1}</p>
+    <div class="pkmn-right-box">
+      <div class="rank-box">
+        <img class="rank-photo" src="./icons/${pkmn.rank}.svg">
+        <p class="english-name">${pkmn.rank}</p>
+      </div>
+      <div class="type-box">
+        <img class="rank-photo" src="./icons/${pkmn.type1}.svg">
+        <p class="english-name">${pkmn.type1}</p>
+      </div>
       ${checkType2(pkmn)}
     </div>
   </div>
@@ -191,8 +201,10 @@ function filterByRarity(contenderList){
 function checkType2(entry){
   if(entry.type2 !== ''){
     return `
-    <img class="rank-photo" src="./icons/${entry.type2}.svg"></img>
-    <p>${entry.type2}</p>
+    <div class="type-box">
+      <img class="rank-photo" src="./icons/${entry.type2}.svg"></img>
+      <p class="english-name">${entry.type2}</p>
+    </div>
     `
   }
   else{
