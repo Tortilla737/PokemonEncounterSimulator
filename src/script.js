@@ -1,4 +1,7 @@
-import completeList from './PokemonTable.json' assert { type: "json" };
+let completeList = []
+fetch('./src/PokemonTable.json')
+  .then(resp => resp.json())
+  .then(data => {completeList = data})
 
 const buttonList = document.querySelector(".button2");
 const buttonGo = document.querySelector(".button1");
@@ -217,8 +220,6 @@ elegantere Lösung für rarity distribution
 reset button
 
 Typ Box background color = Typ Icon background color
-
-firefox support
 
 random beere
 */
