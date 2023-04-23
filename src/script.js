@@ -5,6 +5,7 @@ fetch('./src/PokemonTable.json')
 
 const buttonList = document.querySelector(".button2");
 const buttonGo = document.querySelector(".button1");
+const buttonReset = document.querySelector(".button3");
 let filteredList = completeList;
 let commonRarity = 60;
 let uncommonRarity = 30;
@@ -45,6 +46,15 @@ buttonList.addEventListener('click', e =>{
     `;
   }
   
+})
+
+buttonReset.addEventListener('click', e =>{
+  document.getElementById('typeDrop').value = 'Egal';
+  document.getElementById('biomsDrop1').value = 'Egal';
+  document.getElementById('biomsDrop2').value = 'Egal';
+  document.getElementById('weatherDrop').value = 'Egal';
+  document.getElementById('daytimeDrop').value = 'Egal';
+  document.getElementById('rankDrop').value = 'Egal';
 })
 
 function pokemonTemplate(pkmn){
@@ -228,8 +238,6 @@ function checkStatus(){
 
 /*
 elegantere Lösung für rarity distribution
-
-reset button
 
 Typ Box background color = Typ Icon background color
 

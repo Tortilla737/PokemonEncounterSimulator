@@ -49,6 +49,7 @@ input {
   background-color: #eeeeee;
   border: 2px solid #313131;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
 }
 .pkmn-text-box {
   display: flex;
@@ -127,6 +128,9 @@ input {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+}
+.button3 {
+  background-color: #324f5f;
 }
 .Normal{
   background-color: #DDDDDD;
