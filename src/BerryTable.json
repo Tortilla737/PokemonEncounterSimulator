@@ -1,0 +1,402 @@
+[
+    {
+      "number": 1,
+      "name": "Amrena",
+      "nameEnglish": "Cheri",
+      "rarity": 1,
+      "effect": "Heilt Paralyse.",
+      "description": "Erblüht mit hübschen, zarten Blumen. Diese knallrote Beere ist sehr scharf."
+    },
+    {
+      "number": 2,
+      "name": "Maron",
+      "nameEnglish": "Chesto",
+      "rarity": 1,
+      "effect": "Heilt Schlaf.",
+      "description": "Diese Beere hat eine dicke Haut und hartes Fruchtfleisch. Sie ist trocken, aber vollständig essbar."
+    },
+    {
+      "number": 3,
+      "name": "Pirsif",
+      "nameEnglish": "Pecha",
+      "rarity": 1,
+      "effect": "Heilt normale Vergiftung.",
+      "description": "Im Inneren ist sie fast hohl, daher bietet sie nicht viel Fruchtfleisch. Das aber ist süß und delikat."
+    },
+    {
+      "number": 4,
+      "name": "Fragia",
+      "nameEnglish": "Rawst",
+      "rarity": 2,
+      "effect": "Heilt Verbrennung um eine Stufe.",
+      "description": "Wenn die Blätter lang und wellig sind, wird die Beere sehr bitter."
+    },
+    {
+      "number": 5,
+      "name": "Wilbir",
+      "nameEnglish": "Aspear",
+      "rarity": 2,
+      "effect": "Heilt Erfrierungen um eine Stufe.",
+      "description": "Diese Beere ist sehr saftig und sauer im Geschmack!"
+    },
+    {
+      "number": 6,
+      "name": "Sinel",
+      "nameEnglish": "Oran",
+      "rarity": 1,
+      "effect": "Heilt 1 HP.",
+      "description": "Die Gaben der Natur vereinigt in einer einzigen Beere. Im Mund entfaltet sie eine wunderbare Aromamischung."
+    },
+    {
+      "number": 7,
+      "name": "Persim",
+      "nameEnglish": "Persim",
+      "rarity": 1,
+      "effect": "Heilt Verwirrung",
+      "description": "Liebt Sonnenlicht. Die Beere wächst im Sonnenlicht sehr schnell."
+    },
+    {
+      "number": 8,
+      "name": "Prunus",
+      "nameEnglish": "Lum",
+      "rarity": 3,
+      "effect": "Heilt alle Statusveränderungen.",
+      "description": "Diese Beere sammelt Nährstoffe, die der Gesundheit der Pokémon dienen. Aber dadurch verläuft ihr Wachstum langsam."
+    },
+    {
+      "number": 9,
+      "name": "Tsitru",
+      "nameEnglish": "Sitrus",
+      "rarity": 3,
+      "effect": "Heilt 3 HP oder 1 Lethal Damage.",
+      "description": "Eng verwandt mit Sinel, aus der Aran Familie. Diese große Beere ist von rundem Geschmack."
+    },
+    {
+      "number": 10,
+      "name": "Jonago",
+      "nameEnglish": "Leppa",
+      "rarity": 1,
+      "effect": "Der Nutzer darf eine Attacke wiederholen, die er bereits diese Runde eingesetzt hat. (Außer Evade und Clash)",
+      "description": "Schmackhaft und saftig. Wächst langsamer als Amrena und andere. Je kleiner, desto delikater."
+    },
+    {
+      "number": 11,
+      "name": "Giefe",
+      "nameEnglish": "Figy",
+      "rarity": 1,
+      "effect": "Heilt 2 HP. Ist Strength des Nutzers niedriger als 3, wird er verwirrt.",
+      "description": "Etwas scharf, aber weich. Die Beere sieht angekaut aus. Sie ist voller scharfer Substanzen."
+    },
+    {
+      "number": 12,
+      "name": "Wiki",
+      "nameEnglish": "Wiki",
+      "rarity": 1,
+      "effect": "Heilt 2 HP. Ist Special des Nutzers niedriger als 3, wird er verwirrt.",
+      "description": "Etwas trocken und hart. Die Beere wächst unförmig, damit Pokémon sie besser greifen können."
+    },
+    {
+      "number": 13,
+      "name": "Mago",
+      "nameEnglish": "Mago",
+      "rarity": 1,
+      "effect": "Heilt 2 HP. Ist Dexterity des Nutzers niedriger als 3, wird er verwirrt.",
+      "description": "Etwas süß und hart. Die Beere hat Ausbeulungen. Je mehr Beulen, desto schmackhafter ist sie."
+    },
+    {
+      "number": 14,
+      "name": "Gauve",
+      "nameEnglish": "Aguav",
+      "rarity": 1,
+      "effect": "Heilt 2 HP. Ist Insight des Nutzers niedriger als 3, wird er verwirrt.",
+      "description": "Etwas bitter und zäh. Die hübsche Blüte, die sie entwickelt, nimmt kaum Sonnenlicht auf."
+    },
+    {
+      "number": 15,
+      "name": "Yapa",
+      "nameEnglish": "Iapapa",
+      "rarity": 1,
+      "effect": "Heilt 2 HP. Ist Vitality des Nutzers niedriger als 3, wird er verwirrt.",
+      "description": "Etwas sauer und cremig weich. Die Saftigkeit des Fruchtmarks unterstreicht die Säuerlichkeit."
+    },
+    {
+      "number": 16,
+      "name": "Lydzi",
+      "nameEnglish": "Liechi",
+      "rarity": 2,
+      "effect": "Sind die HP bei 50% oder weniger, wird Strength um 1 erhöht.",
+      "description": "Scharf und süß. Eine geheimnisvolle Beere. Man sagt, sie enthalte die Kraft des Meeres."
+    },
+    {
+      "number": 17,
+      "name": "Lingan",
+      "nameEnglish": "Ganlon",
+      "rarity": 2,
+      "effect": "Sind die HP bei 50% oder weniger, wird Defense um 1 erhöht.",
+      "description": "Bitter und trocken. Eine geheimnisvolle Beere. Man sagt, sie enthalte die Kraft des Landes."
+    },
+    {
+      "number": 18,
+      "name": "Salka",
+      "nameEnglish": "Salac",
+      "rarity": 2,
+      "effect": "Sind die HP bei 50% oder weniger, wird Dexterity um 1 erhöht.",
+      "description": "Sauer und süß. Eine geheimnisvolle Beere. Man sagt, sie enthalte die Kraft des Himmels."
+    },
+    {
+      "number": 19,
+      "name": "Tahay",
+      "nameEnglish": "Petaya",
+      "rarity": 2,
+      "effect": "Sind die HP bei 50% oder weniger, wird Special um 1 erhöht.",
+      "description": "Scharf und bitter. Eine geheimnisvolle Beere. Man sagt, sie enthalte die Kraft allen Lebens."
+    },
+    {
+      "number": 20,
+      "name": "Apiko",
+      "nameEnglish": "Apicot",
+      "rarity": 2,
+      "effect": "Sind die HP bei 50% oder weniger, wird Special Defense um 1 erhöht.",
+      "description": "Sauer und trocken. Eine rätselhafte Beere. Man kann nicht sagen, wie und was sie ist."
+    },
+    {
+      "number": 21,
+      "name": "Lansat",
+      "nameEnglish": "Lansat",
+      "rarity": 3,
+      "effect": "Sind die HP bei 50% oder weniger, haben alle Attacken High Critical.",
+      "description": "Ein reichhaltiger und ausgewogener Geschmack. Eine legendäre Beere. Sie zu tragen bringt Freude."
+    },
+    {
+      "number": 22,
+      "name": "Krambo",
+      "nameEnglish": "Starf",
+      "rarity": 4,
+      "effect": "Sind die HP bei 50% oder weniger, erhöht sich ein zufälliges Attribut um 2.",
+      "description": "Ein reichhaltiger und ausgewogener Geschmack. Diese Beere wird als Illusion angesehen. Sie soll so mächtig gewesen sein, dass sie an den Rand der Welt verbannt wurde."
+    },
+    {
+      "number": 23,
+      "name": "Enigma",
+      "nameEnglish": "Enigma",
+      "rarity": 4,
+      "effect": "Heilt 5 HP, wenn man von einer sehr effektiven Attacke getroffen wird.",
+      "description": "Extrem scharf. Eine enigmatische Beere. Sie scheint die Macht der Sterne zu besitzen."
+    },
+    {
+      "number": 24,
+      "name": "Wunfru",
+      "nameEnglish": "Micle",
+      "rarity": 2,
+      "effect": "Sind die HP bei 50% oder weniger, erhält die nächste Attacke einen Bonus Accuracy Die.",
+      "description": "Diese Beere hat ein extrem trockenes Aroma. Isst man sie mit anderen Lebensmitteln, erhalten diese eine gewisse Süße."
+    },
+    {
+      "number": 25,
+      "name": "Eipfel",
+      "nameEnglish": "Custap",
+      "rarity": 2,
+      "effect": "Sind die HP bei 50% oder weniger, hat die nächste Attacke Priority 2.",
+      "description": "Das Fleisch unterhalb der harten Schale dieser Beere ist zart und extrem süß."
+    },
+    {
+      "number": 26,
+      "name": "Jaboca",
+      "nameEnglish": "Jaboca",
+      "rarity": 4,
+      "effect": "Wird man von einer physischen Attacke getroffen, erleidet der Angreifer 1 Schaden.",
+      "description": "Extrem bitter. Die winzigen Beeren auf der Oberfläche dieser Beere platzen auf rhythmische Weise auf, wenn man sie hart anfasst."
+    },
+    {
+      "number": 27,
+      "name": "Rosel",
+      "nameEnglish": "Rowap",
+      "rarity": 4,
+      "effect": "Wird man von einer Spezialattacke getroffen, erleidet der Angreifer 1 Schaden.",
+      "description": "Extrem sauer. Früher haben die Menschen die kreiselförmige Oberfläche dieser Beere abgetrennt und sie als Spielzeug verwendet."
+    },
+    {
+      "number": 28,
+      "name": "Grarz",
+      "nameEnglish": "Kebia",
+      "rarity": 3,
+      "effect": "Heilt alle Vergiftungen.",
+      "description": "Sauer und trocken. Diese Beere erstrahlt in einem hellen Grün. Ihr Fleisch hingegen ist schwarz und hat einen trockenen Geschmack."
+    },
+    {
+      "number": 29,
+      "name": "Koako",
+      "nameEnglish": "Occa",
+      "rarity": 3,
+      "effect": "Heilt alle Verbrennungen.",
+      "description": "Man sagt, diese Beere wuchs früher in den Tropen. Sie hat einen sehr Scharfen Geschmack."
+    },
+    {
+      "number": 41,
+      "name": "Tamot",
+      "nameEnglish": "Tamato",
+      "rarity": 3,
+      "effect": "Heilt alle Erfrierungen.",
+      "description": "Diese große Beere ist sehr scharf. Isst man sie in der kalten Jahreszeit, wärmt sie einen von innen."
+    },
+    {
+      "number": 30,
+      "name": "Ginenma",
+      "nameEnglish": "Ginenma",
+      "rarity": 3,
+      "effect": "Regeneriert einen reduzierten Statuswert.",
+      "description": "Trocken und sauer. Wird diese Beere gegessen, haftet ihr Aroma für mehrere Stunden an einem."
+    },
+    {
+      "number": 31,
+      "name": "Himmih",
+      "nameEnglish": "Razz",
+      "rarity": 1,
+      "effect": "",
+      "description": "Diese rote Beere schmeckt etwas scharf. Die Körnchen auf ihrer Oberfläche schmecken trocken."
+    },
+    {
+      "number": 32,
+      "name": "Morb",
+      "nameEnglish": "Bluk",
+      "rarity": 1,
+      "effect": "",
+      "description": "Etwas trocken und süß. Die Beere ist außen blau, verfärbt den Mund aber schwarz."
+    },
+    {
+      "number": 33,
+      "name": "Nanab",
+      "nameEnglish": "Nanab",
+      "rarity": 1,
+      "effect": "",
+      "description": "Etwas süß und bitter. Diese Beere war die 7., die auf der Welt entdeckt wurde."
+    },
+    {
+      "number": 34,
+      "name": "Nirbe",
+      "nameEnglish": "Wepear",
+      "rarity": 1,
+      "effect": "",
+      "description": "Die Blume ist klein und weiß. Angenehm bitter und sauer zugleich. Fördert die Verdauung."
+    },
+    {
+      "number": 35,
+      "name": "Sanana",
+      "nameEnglish": "Pinap",
+      "rarity": 1,
+      "effect": "",
+      "description": "Etwas sauer und scharf. Man sagt, dass man aus dieser würzigen Beere Medizin machen kann, wenn man vorher die saure Haut entfernt."
+    },
+    {
+      "number": 36,
+      "name": "Grana",
+      "nameEnglish": "Pomeg",
+      "rarity": 3,
+      "effect": "Erhöht die Freundschaft.",
+      "description": "Etwas bitter und sauer. Wird die dicke Haut dieser Beere entfernt, zeigen sich viele Fruchtstückchen."
+    },
+    {
+      "number": 37,
+      "name": "Setang",
+      "nameEnglish": "Kelpsy",
+      "rarity": 3,
+      "effect": "Erhöht die Freundschaft.",
+      "description": "Etwas sauer, bitter und trocken. Diese Beere kann man roh oder aber auch gekocht verzehren. Gekocht erhält man so auch ein wunderbares Gewürz."
+    },
+    {
+      "number": 38,
+      "name": "Qualot",
+      "nameEnglish": "Qualot",
+      "rarity": 3,
+      "effect": "Erhöht die Freundschaft.",
+      "description": "Etwas sauer, scharf und süß. Liebt das Wasser. Wächst besonders gut in regenreichen Gegenden."
+    },
+    {
+      "number": 39,
+      "name": "Honmel",
+      "nameEnglish": "Hondew",
+      "rarity": 3,
+      "effect": "Erhöht die Freundschaft.",
+      "description": "Etwas scharf, trocken und bitter. Diese seltene Beere gilt als Luxusfrucht, daher ist sie als Mitbringsel sehr beliebt."
+    },
+    {
+      "number": 40,
+      "name": "Labrus",
+      "nameEnglish": "Grepa",
+      "rarity": 3,
+      "effect": "Erhöht die Freundschaft.",
+      "description": "Etwas trocken, süß und sauer. Diese weiche Beere erfreut mit einem süßen und zugleich würzigen Geschmack."
+    },
+    {
+      "number": 42,
+      "name": "Saim",
+      "nameEnglish": "Cornn",
+      "rarity": 2,
+      "effect": "",
+      "description": "Sehr trocken und etwas süß. Man erkennt ihren delikaten Geschmack nur, wenn man mehrere von ihnen isst."
+    },
+    {
+      "number": 43,
+      "name": "Magost",
+      "nameEnglish": "Magost",
+      "rarity": 2,
+      "effect": "",
+      "description": "Sehr süß und etwas bitter. Der ausgereifte Geschmack und die traumhafte Süße dieser Beere machen sie zur Lieblingsbeere mancher Pokémon."
+    },
+    {
+      "number": 44,
+      "name": "Rabuta",
+      "nameEnglish": "Rabuta",
+      "rarity": 2,
+      "effect": "",
+      "description": "Sehr bitter und etwas sauer. Auch wenn sie bitter ist, sollte man sie essen. Und zwar mit der Schale, denn deren feine Härchen reinigen den Magen."
+    },
+    {
+      "number": 45,
+      "name": "Tronzi",
+      "nameEnglish": "Nomel",
+      "rarity": 2,
+      "effect": "",
+      "description": "Sehr sauer und etwas scharf. Die Säuerlichkeit konzentriert sich vor allem am spitzen Ende der Beere."
+    },
+    {
+      "number": 46,
+      "name": "Kiwan",
+      "nameEnglish": "Spelon",
+      "rarity": 2,
+      "effect": "",
+      "description": "Extrem scharf und etwas trocken. Diese Beere ist so scharf, dass nicht nur Feuerpokémon Feuer spucken wollen, wenn sie sie gefressen haben."
+    },
+    {
+      "number": 47,
+      "name": "Pallm",
+      "nameEnglish": "Pamtre",
+      "rarity": 2,
+      "effect": "",
+      "description": "Extrem trocken und etwas süß. Diese Beere kam einst über ein weites Meer. Heutzutage wird sie in der Sinnoh-Region angebaut."
+    },
+    {
+      "number": 48,
+      "name": "Wasmel",
+      "nameEnglish": "Watmel",
+      "rarity": 2,
+      "effect": "",
+      "description": "Extrem süß und etwas bitter. Ein großzügiges Geschenk der Natur, das einfach unglaublich süß ist. Manche Beeren werden bis zu 50 cm groß."
+    },
+    {
+      "number": 49,
+      "name": "Durin",
+      "nameEnglish": "Durin",
+      "rarity": 2,
+      "effect": "",
+      "description": "Extrem bitter und etwas sauer. Nur ein einziger Biss stoppt einen Schluckauf."
+    },
+    {
+      "number": 50,
+      "name": "Myrtil",
+      "nameEnglish": "Belue",
+      "rarity": 2,
+      "effect": "",
+      "description": "Diese glänzende Beere sieht einfach zum Anbeißen aus, so lecker wirkt sie. Aber ... sie ist schrecklich sauer und etwas scharf."
+    }
+   ]

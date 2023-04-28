@@ -11,7 +11,7 @@ let commonRarity = 60;
 let uncommonRarity = 30;
 let rareRarity = 8;
 let mythicRarity = 2;
-let shinyChance = 8000;
+let shinyChance = 4096;
 let fatChance = 36;
 
 buttonGo.addEventListener('click', e =>{
@@ -45,7 +45,6 @@ buttonList.addEventListener('click', e =>{
     </div>
     `;
   }
-  
 })
 
 buttonReset.addEventListener('click', e =>{
@@ -62,9 +61,9 @@ function pokemonTemplate(pkmn){
   <div class="pkmn-box ${pkmn.type1}">
     <img class="pkmn-photo" src="./pics/${pkmn.number}.png">
     <div class="pkmn-text-box">
-      <h2 class="english-name">#${pkmn.number}</h2>
-      <h2 class="pkmn-name">${pkmn.name}</h2>
-      <h1 class="english-name">${pkmn.nameEnglish}</h1>
+      <p class="english-name">#${pkmn.number}</p>
+      <p class="pkmn-name">${pkmn.name}</p>
+      <p class="english-name">${pkmn.nameEnglish}</p>
     </div>
     <div class="pkmn-right-box">
       <div class="rank-box">
@@ -86,10 +85,10 @@ function pokemonRandomTemplate(pkmn){
   <div class="pkmn-box ${pkmn.type1}">
     <img class="pkmn-photo" src="./pics/${pkmn.number}.png">
     <div class="pkmn-text-box">
-      <h2 class="english-name">#${pkmn.number}</h2>
-      <h2 class="pkmn-name">${pkmn.name}</h2>
-      <h2 class="english-name">${gender(pkmn)}</h2>
-      <h1 class="english-name">${pkmn.nameEnglish}</h1>
+      <p class="english-name">#${pkmn.number}</p>
+      <p class="pkmn-name">${pkmn.name}</p>
+      <p class="english-name">${gender(pkmn)}</p>
+      <p class="english-name">${pkmn.nameEnglish}</p>
       ${checkStatus(pkmn)}
     </div>
     <div class="pkmn-right-box">
@@ -205,7 +204,6 @@ function filterByRarity(contenderList){
   else{
     return contenderList
   }
-  
 }
 
 function checkType2(entry){

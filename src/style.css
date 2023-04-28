@@ -1,6 +1,6 @@
 body {
   background: grey;
-  padding: 0 24px;
+  padding: 0 2%;
   margin: 0;
   height: 100vh;
   justify-content: center;
@@ -10,6 +10,9 @@ body {
 h1 {
   color: #fcbe24;
 }
+p {
+  margin: 1% 1%;
+}
 img {
   max-width: 100%;
   height: auto;
@@ -18,7 +21,12 @@ select {
   border-radius: 4px;
   padding: 5px;
   min-width: 170px;
-  font-size: 1rem;
+  font-size: 1em;
+}
+a {
+  display: block;
+  height: 100%;
+  color: white;
 }
 input {
   padding: 5px;
@@ -43,7 +51,7 @@ input {
   display: flex;
   align-items: center;
   max-width: 650px;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 20px;
   margin: 20px auto;
   border-radius: 30px;
   background-color: #eeeeee;
@@ -67,14 +75,18 @@ input {
 }
 .rank-box {
   display: flex;
+  align-items: center;
+  min-height: 30px;
   padding-left: 4px;
   gap: 4px;
 }
 .type-box {
   display: flex;
-  padding-left: 4px;
+  align-items: center;
+  padding: 3px;
   gap: 4px;
   border-radius: 80px;
+  min-height: 30px;
   background-color: #eeeeee;
 }
 .description-box {
@@ -96,12 +108,10 @@ input {
 }
 .pkmn-name {
   font-size: 2rem;
-  font-weight: normal;
   color: #343434;
 }
 .english-name {
   font-size: 1rem;
-  font-weight: normal;
   color: #808080;
 }
 .shiny-text {
@@ -111,10 +121,10 @@ input {
 }
 .pkmn-photo {
   float: left;
+  min-width: 50px;
 }
 .rank-photo {
   max-width: 40px;
-  min-width: 20px;
 }
 .button {
   border-radius: 15px;
@@ -131,6 +141,17 @@ input {
 }
 .button3 {
   background-color: #324f5f;
+}
+.button-title {
+  max-width: 90px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  background-color: #3a3b3b;
+  padding: 5px 5px;
+  text-align: center;
+  font-size: 10pt;
+  margin: 5px 0 0 auto;
 }
 .Normal{
   background-color: #DDDDDD;
