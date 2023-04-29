@@ -3,9 +3,7 @@ body {
   padding: 0 2%;
   margin: 0;
   height: 100vh;
-  justify-content: center;
-  align-items: center;
-  font-family: sans-serif;
+  font-family: 'Gill Sans', 'Trebuchet MS', 'Gill Sans MT', Calibri, sans-serif;
 }
 h1 {
   color: #fcbe24;
@@ -33,6 +31,9 @@ input {
   max-width: 156px;
   font-size: 1rem;
 }
+.centered {
+  align-self: center;
+}
 .flex-container {
   display: flex;
   flex-wrap: wrap;
@@ -58,6 +59,7 @@ input {
   border: 2px solid #313131;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
   overflow: hidden;
+  gap: 1%;
 }
 .pkmn-text-box {
   display: flex;
@@ -69,7 +71,7 @@ input {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  min-width: 150px;
+  min-width: 120px;
   margin-left: auto;
   gap: 2px;
 }
@@ -77,7 +79,6 @@ input {
   display: flex;
   align-items: center;
   min-height: 30px;
-  padding-left: 4px;
   gap: 4px;
 }
 .type-box {
@@ -86,7 +87,7 @@ input {
   padding: 3px;
   gap: 4px;
   border-radius: 80px;
-  min-height: 30px;
+  min-height: 40px;
   background-color: #eeeeee;
 }
 .description-box {
@@ -118,13 +119,18 @@ input {
   font-size: 1rem;
   font-weight: bold;
   color: #fcbe24;
+  text-shadow: 1px 1px 2px #313131ab;
 }
 .pkmn-photo {
   float: left;
   min-width: 50px;
 }
-.rank-photo {
+.type-photo {
   max-width: 40px;
+}
+.rank-photo {
+  max-width: 30px;
+  margin-right: 30px;
 }
 .button {
   border-radius: 15px;

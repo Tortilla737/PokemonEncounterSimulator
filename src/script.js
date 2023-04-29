@@ -11,8 +11,8 @@ let commonRarity = 60;
 let uncommonRarity = 30;
 let rareRarity = 8;
 let mythicRarity = 2;
-let shinyChance = 4096;
-let fatChance = 36;
+let shinyChance = 4069; //4069
+let fatChance = 36;     //36
 
 buttonGo.addEventListener('click', e =>{
   filteredList = filterByCriteria(completeList);
@@ -64,14 +64,15 @@ function pokemonTemplate(pkmn){
       <p class="english-name">#${pkmn.number}</p>
       <p class="pkmn-name">${pkmn.name}</p>
       <p class="english-name">${pkmn.nameEnglish}</p>
-    </div>
-    <div class="pkmn-right-box">
       <div class="rank-box">
         <img class="rank-photo" src="./icons/${pkmn.rank}.svg">
         <p class="english-name">${pkmn.rank}</p>
       </div>
+    </div>
+    <div class="pkmn-right-box">
+      <p class="centered">Typ:</p>
       <div class="type-box">
-        <img class="rank-photo" src="./icons/${pkmn.type1}.svg">
+        <img class="type-photo" src="./icons/${pkmn.type1}.svg">
         <p class="english-name">${pkmn.type1}</p>
       </div>
       ${checkType2(pkmn)}
@@ -89,15 +90,16 @@ function pokemonRandomTemplate(pkmn){
       <p class="pkmn-name">${pkmn.name}</p>
       <p class="english-name">${gender(pkmn)}</p>
       <p class="english-name">${pkmn.nameEnglish}</p>
+      <div class="rank-box">
+        <p class="english-name">${pkmn.rank}</p>
+        <img class="rank-photo" src="./icons/${pkmn.rank}.svg">
+      </div>
       ${checkStatus(pkmn)}
     </div>
     <div class="pkmn-right-box">
-      <div class="rank-box">
-        <img class="rank-photo" src="./icons/${pkmn.rank}.svg">
-        <p class="english-name">${pkmn.rank}</p>
-      </div>
+      <p class="centered">Typ:</p>
       <div class="type-box">
-        <img class="rank-photo" src="./icons/${pkmn.type1}.svg">
+        <img class="type-photo" src="./icons/${pkmn.type1}.svg">
         <p class="english-name">${pkmn.type1}</p>
       </div>
       ${checkType2(pkmn)}
@@ -210,7 +212,7 @@ function checkType2(entry){
   if(entry.type2 !== ''){
     return `
     <div class="type-box">
-      <img class="rank-photo" src="./icons/${entry.type2}.svg"></img>
+      <img class="type-photo" src="./icons/${entry.type2}.svg"></img>
       <p class="english-name">${entry.type2}</p>
     </div>
     `
@@ -223,10 +225,10 @@ function checkType2(entry){
 function checkStatus(){
   let output = '';
   if(1 == Math.floor(Math.random() * shinyChance)){
-    output = output + `<h1 class="shiny-text">shiny!</h1>`
+    output = output + `<p class="shiny-text">shiny!</p>`
   }
   if(1 == Math.floor(Math.random() * fatChance)){
-    output =  output + `<h1 class="shiny-text">overgrown!</h1>`
+    output =  output + `<p class="shiny-text">overgrown!</p>`
   }
   if(0){
     output = output + `<p>Wesen</p>`
