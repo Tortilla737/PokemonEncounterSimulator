@@ -1,0 +1,81 @@
+{
+    "Regions":["Kanto","Johto","Hoenn","Sinnoh","Einall","Kalos","Alola","Galar","Hisui","Paldea"],
+    "Specials":["Spezial","Paradox","Fossil"],
+    "Bioms":[
+        {
+            "Name":"Stadt",
+            "Description":"In der Stadt haben Taubsis und Rattfratz' gelernt neben und mit Menschen zu leben. Hier findet man viele Pokémon die die Gesellschaft von Menschen genießen und sich an kleine wie große Städte angepasst haben.",
+            "Group":"Urban"
+        },
+        {
+            "Name":"Industrie",
+            "Description":"Fabriken, Schrottplätze und Kraftwerke sind beliebt bei Elektro-Pokémon und Außenseitern. Manchmal verwirrt sich ein entflohenes oder ausgesetztes Pokémon hierher.",
+            "Group":"Urban"
+        },
+        {
+            "Name":"Park",
+            "Description":"Von Menschenhand angelegte Parks mit Springbrunnen, Blumenwiesen oder Seen und kleinen Wäldern, Stadt Pokémon sowie zutrauliche wilde Pokémon treffen hier aufeinander.",
+            "Group":"Urban"
+        },
+        {
+            "Name":"See",
+            "Description":"Ruhige Quellen in verwunschenen Wäldern, durch Wiesen plätschernde Bäche oder reißende Ströme, die meisten entspringen oder münden in großen Süßwasser Seen.",
+            "Group":"Aquatisch"
+        },
+        {
+            "Name":"Ozean",
+            "Description":"Die unendlichen Weiten des Ozeans, tausende Tonnen an Meerwasser, nur gelegentlich unterbrochen von kleinen Inseln, Riffen oder Felsen. Niemand weiß wie viele noch unbekannte Pokémon sich in den Tiefen des Ozeans verbergen.",
+            "Group":"Aquatisch"
+        },
+        {
+            "Name":"Strand",
+            "Description":"Geprägt von sandigen Stränden oder Felsklippen, der Übergang zwischen Meer und Landmasse erscheint schmal, aber bietet einen Lebensraum denjenigen Pokémon, die die salzige Wassernähe zum Ozean suchen, ohne auf festen Untergrund verzichten zu wollen.",
+            "Group":"Aquatisch"
+        },
+        {
+            "Name":"Wald",
+            "Description":"Wälder bieten vielen eine Zuflucht mit dichten Blätterkronen oben und Sträuchern und Buschwerk unten. Egal ob Nadel-, Laub- oder Mischwald, ob tropisch oder boreal, Wälder sind so mannigfaltig wie ihre Bewohner.",
+            "Group":"Flora"
+        },
+        {
+            "Name":"Wiese",
+            "Description":"Hügellandschaften, wilde Blumenwiesen oder grünes Flachland, das wohl mildeste Terrain in dem sich wilde Pokémon aufhalten können.",
+            "Group":"Flora"
+        },
+        {
+            "Name":"Sumpf",
+            "Description":"Sümpfe sind ein abwechslungsreiches Biotop. Neben Moor Ödland, dass nur in flachen Gegenden vorkommt, gibt es nährstoffreiche Sümpfe, durchzogen von Mangroven und anderen Wäldern, mit steigenden und sinkenden Wasserpegeln und Röhricht-Landschaften, die in der Nähe von Ufern oder Brackgewässern entstehen.",
+            "Group":"Flora"
+        },
+        {
+            "Name":"Berg",
+            "Description":"Von den eisigen Bergspitzen, über Schluchten und zerklüftetes Gebiet, bis hinunter ins Tal, in den Bergen finden eine Vielzahl an Überlebensspezialisten ein Zuhause.",
+            "Group":"Gebirge"
+        },
+        {
+            "Name":"Höhle",
+            "Description":"Höhlen kommen einzeln als Übernachtungsstätte für Ursaringe vor, oder als komplexe Systeme, die einen Übergang zwischen Außenwelt und Untergrund darstellen. Sie bieten Schutz vor Sonne und Schnee und schwankenden Temperaturen.",
+            "Group":"Gebirge"
+        },
+        {
+            "Name":"Untergrund",
+            "Description":"Unterhalb von Städten befinden sich Kanalisationen, diese wirken wie ein schlechter Lebensraum, aber auch sie sind nicht unbewohnt. Ebenso wie tiefe Höhlensysteme weit unter der Erde sind sie eine Nische für speziell angepasste Pokémon.",
+            "Group":"Gebirge"
+        },
+        {
+            "Name":"Wüste",
+            "Description":"Wüsten haben vor allem eines gemeinsam, sie sind trocken und karg. Neben der bekannten Sandwüste, kommen auch Kies-, Stein- oder Salzwüsten vor. Für viele Pokémon und Menschen ist es undenkbar hier zu leben, aber für manche Pokémon sind sie genau der richtige Ort, um sich wohlzufühlen.",
+            "Group":"Ödland"
+        },
+        {
+            "Name":"Geröll",
+            "Description":"Steppen und Gerölllandschaften sind nicht ganz so arm an Vegetation wie Wüsten und bilden oft einen Übergang zu reicheren Biotopen. Sie bestehen aus Silikat-, Schiefer- oder Kalkgestein sowie Schutt und groben Steinfelsen. In Felsnischen und an Bergwände klammern sich kleine Pflanzen mit genug Kraft, um Wind und Wetter zu überstehen.",
+            "Group":"Ödland"
+        },
+        {
+            "Name":"Ruine",
+            "Description":"Verlassene menschliche Stätten, zurückerobert von Natur und wilden Pokémon, Ruinen sind zum einem mysteriös, zum anderen beklemmend und gruselig.",
+            "Group":"Ödland"
+        }
+    ]
+}

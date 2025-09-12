@@ -2,20 +2,23 @@ let completeList = []
 fetch('./src/PokemonTable.json')
   .then(resp => resp.json())
   .then(data => {completeList = data})
+  .catch(error => console.error(error));
 
-const buttonList = document.querySelector(".button2");
-const buttonGo = document.querySelector(".button1");
-const buttonReset = document.querySelector(".button3");
+const buttonList = document.getElementById("buttonShowAll");
+const buttonGo = document.getElementById("buttonGoRandom");
+const buttonReset = document.getElementById("buttonResetAll");
 let filteredList = completeList;
-let commonRarity = 60;
-let uncommonRarity = 30;
-let rareRarity = 8;
-let mythicRarity = 2;
+let commonRarity = 48;
+let uncommonRarity = 32;
+let rareRarity = 15;
+let mythicRarity = 5;
 let shinyChance = 4069; //4069
-let fatChance = 36;     //36
+let fatChance = 500;     //36
 
+//#region Button Listeners
 buttonGo.addEventListener('click', e =>{
   filteredList = filterByCriteria(completeList);
+  document.getElementById('numberOfResultsField').innerText = filteredList.length;
   if(filteredList.length > 0){
     filteredList = gatherRandoms(filteredList, document.getElementById('numberField').value);
     document.getElementById('listSpace').innerHTML = `
@@ -33,6 +36,7 @@ buttonGo.addEventListener('click', e =>{
 
 buttonList.addEventListener('click', e =>{
   filteredList = filterByCriteria(completeList);
+  document.getElementById('numberOfResultsField').innerText = filteredList.length;
   if(filteredList.length > 0){
     document.getElementById('listSpace').innerHTML = `
     ${filteredList.map(pokemonTemplate).join('')}
@@ -54,8 +58,11 @@ buttonReset.addEventListener('click', e =>{
   document.getElementById('weatherDrop').value = 'Egal';
   document.getElementById('daytimeDrop').value = 'Egal';
   document.getElementById('rankDrop').value = 'Egal';
+  regionCheckboxes.forEach(box => box.checked = true);
+  specialCheckboxes.forEach(box => box.checked = false);
 })
 
+//#region Box Templates
 function pokemonTemplate(pkmn){
   return `
   <div class="pkmn-box ${pkmn.type1}">
@@ -82,13 +89,14 @@ function pokemonTemplate(pkmn){
 }
 
 function pokemonRandomTemplate(pkmn){
+  let gender = getGender(pkmn);
   return `
   <div class="pkmn-box ${pkmn.type1}">
-    <img class="pkmn-photo" src="./pics/${pkmn.number}.png">
+    <img class="pkmn-photo" src="./pics/${getPic(pkmn, gender)}.png">
     <div class="pkmn-text-box">
       <p class="english-name">#${pkmn.number}</p>
       <p class="pkmn-name">${pkmn.name}</p>
-      <p class="english-name">${gender(pkmn)}</p>
+      <p class="english-name">${genderF(gender)}</p>
       <p class="english-name">${pkmn.nameEnglish}</p>
       <div class="rank-box">
         <p class="english-name">${pkmn.rank}</p>
@@ -108,20 +116,80 @@ function pokemonRandomTemplate(pkmn){
   `
 }
 
-function gender(entry){
+//#region Determine Randoms
+function getGender(entry){
   if(entry.maleChance !== null){
     if(entry.maleChance < (Math.floor(Math.random() *100)+1)){
-      return '♀'
+      return 'm'
     }
     else{
-      return '♂'
+      return 'f'
     }
+  }
+  else{
+    return 'n/a'
+  }
+}
+
+function getPic(entry, gender){
+  if(entry.special.includes('Geschlecht')){
+    if(gender == 'f'){
+      return entry.number + 'gend'
+    }
+    else{
+      //determine number of variations
+      return entry.number
+    }
+  }
+  else if(entry.special.includes('Variante')){
+    return entry.number
+  }
+  else {
+    return entry.number
+  }
+}
+
+function genderF(gender){
+  if(gender == 'f'){
+    return '♀'
+  }
+  else if(gender == 'm'){
+    return '♂'
   }
   else{
     return ''
   }
 }
 
+function checkType2(entry){
+  if(entry.type2 !== ''){
+    return `
+    <div class="type-box">
+      <img class="type-photo" src="./icons/${entry.type2}.svg"></img>
+      <p class="english-name">${entry.type2}</p>
+    </div>
+    `
+  }
+  else{
+    return ''
+  }
+}
+
+function checkStatus(){
+  let output = '';
+  if(1 == Math.floor(Math.random() * shinyChance)){
+    output = output + `<p class="shiny-text">shiny!</p>`
+  }
+  if(1 == Math.floor(Math.random() * fatChance)){
+    output =  output + `<p class="shiny-text">overgrown!</p>`
+  }
+  if(0){
+    output = output + `<p>Wesen</p>`
+  }
+  return output
+}
+
+//#region Filtering
 function gatherRandoms(contenderList, count){
   let list = [];
   for(let i = 0; i < count; i++){
@@ -150,6 +218,8 @@ function filterByCriteria(listToFilter){
   if(document.getElementById('daytimeDrop').value != 'Egal'){
     listToFilter = listToFilter.filter(compareDaytime)
   }
+  listToFilter = listToFilter.filter(compareRegions);
+  listToFilter = listToFilter.filter(compareSpecials);
   return listToFilter
 }
 
@@ -194,7 +264,30 @@ function compareDaytime(entry){
   }
 }
 
+function compareRegions(entry){
+  for(let i=0; i<regionCheckboxes.length; i++){
+    if(regionCheckboxes[i].checked && entry.origin.includes(keys['Regions'][i])){
+      return entry
+    }
+  }
+}
+
+function compareSpecials(entry) {
+  // Check if entry.special includes none of the keys['Specials']
+  if (keys['Specials'].every(special => !entry.special.includes(special))) {
+    return entry;
+  }
+
+  // Check if entry.special includes one of the keys['Specials'] and the corresponding checkbox is checked
+  for (let i = 0; i < specialCheckboxes.length; i++) {
+    if (entry.special.includes(keys['Specials'][i]) && specialCheckboxes[i].checked) {
+      return entry;
+    }
+  }
+}
+
 function filterByRarity(contenderList){
+  //revise xxx
   if('Egal' == document.getElementById('rankDrop').value){
     let determinedRarity = Math.floor(Math.random() * 100);
     if(determinedRarity<=commonRarity){determinedRarity=1}
@@ -208,38 +301,10 @@ function filterByRarity(contenderList){
   }
 }
 
-function checkType2(entry){
-  if(entry.type2 !== ''){
-    return `
-    <div class="type-box">
-      <img class="type-photo" src="./icons/${entry.type2}.svg"></img>
-      <p class="english-name">${entry.type2}</p>
-    </div>
-    `
-  }
-  else{
-    return ''
-  }
-}
-
-function checkStatus(){
-  let output = '';
-  if(1 == Math.floor(Math.random() * shinyChance)){
-    output = output + `<p class="shiny-text">shiny!</p>`
-  }
-  if(1 == Math.floor(Math.random() * fatChance)){
-    output =  output + `<p class="shiny-text">overgrown!</p>`
-  }
-  if(0){
-    output = output + `<p>Wesen</p>`
-  }
-  return output
-}
-
 /*
 elegantere Lösung für rarity distribution
 
 Typ Box background color = Typ Icon background color
 
-random beere
+Offizielle Beeren Stats
 */

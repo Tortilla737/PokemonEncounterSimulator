@@ -12,7 +12,7 @@
       <a href="berryfinder/index.html">Berry finder</a>
     </div>
     <h1 style="text-align: center;">Pokémon encounter simulator</h1>
-    <div class="flex-container">
+    <div class="choice-container" id="choiceContainer">
       <div class="flex-item">
         <p class="description-small">Biom:<br>Wähle ein Biom, in dem ihr euch aufhaltet.</p>
         <select id="biomsDrop1">
@@ -123,47 +123,66 @@
         <select id="rankDrop">
           <option value="Egal">Rang</option>
           <option value="Starter">Starter</option>
-          <option value="Beginner">Beginner</option>
-          <option value="Amateur">Amateur</option>
+          <option value="Rookie">Rookie</option>
+          <option value="Standard">Standard</option>
+          <option value="Advanced">Advanced</option>
+          <option value="Expert">Expert</option>
           <option value="Ace">Ace</option>
-          <option value="Pro">Pro</option>
         </select>
+      </div>
+    </div>
+    <!--MARK: Check Boxes-->
+    <div class="choice-container" id="regionContainer">
+      <div class="flex-item">
+        <label><input type="checkbox" id="checkRegion1">Kanto</label>
+        <label><input type="checkbox" id="checkRegion2">Johto</label>
+        <label><input type="checkbox" id="checkRegion3">Hoenn</label>
+      </div>
+      <div class="flex-item">
+        <label><input type="checkbox" id="checkRegion4">Sinnoh</label>
+        <label><input type="checkbox" id="checkRegion5">Einall (Unova)</label>
+        <label><input type="checkbox" id="checkRegion6">Kalos</label>
+      </div>
+      <div class="flex-item">
+        <label><input type="checkbox" id="checkRegion7">Alola</label>
+        <label><input type="checkbox" id="checkRegion8">Galar</label>
+        <label><input type="checkbox" id="checkRegion9">Hisui</label>
+      </div>
+      <div class="flex-item">
+        <label><input type="checkbox" id="checkRegion10">Paldea</label>
+      </div>
+      <div class="flex-item">
+        <div class="button button1" id="checkAllRegions">Alle</div>
+        <div class="button button3" id="checkNoRegions">Keine</div>
+      </div>
+    </div>
+    <div class="choice-container" id="regionContainer">
+      <div class="flex-item">
+        <label><input type="checkbox" id="checkSpecial1">Spezial</label>
+        <label><input type="checkbox" id="checkSpecial2">Paradox</label>
+        <label><input type="checkbox" id="checkSpecial3">Fossilien</label>
+      </div>
+      <div class="flex-item">
+        <div class="button button1" id="checkAllSpecials">Alle</div>
+        <div class="button button3" id="checkNoSpecials">Keine</div>
       </div>
     </div>
     
     <div align="center" style="margin: 20px">
-      <div class="button button1">Los geht's!</div>
-      <div class="button button2">Alle anzeigen</div>
-      <div class="button button3">Zurücksetzen</div>
+      <div class="button button1" id="buttonGoRandom">Los geht's!</div>
+      <div class="button button2" id="buttonShowAll">Alle anzeigen</div>
+      <div class="button button3" id="buttonResetAll">Zurücksetzen</div>
     </div>
+    <div class="result-info-box"><p>Ergebnisse: </p><p id="numberOfResultsField"></p></div>
     <div id="listSpace"></div>
     <div id="descriptions">
-      <div class="description-box" style="background-color:#dcdcdc">
-        <p><strong>Stadt:</strong><br>In der Stadt haben Taubsis und Rattfratz' gelernt neben und mit Menschen zu leben. Hier findet man viele Pokémon die die Gesellschaft von Menschen genießen und sich an kleine wie große Städte angepasst haben.</p>
-        <p><strong>Industrie:</strong><br>Fabriken, Schrottplätze und Kraftwerke sind beliebt bei Elektro-Pokémon und Außenseitern. Manchmal verwirrt sich ein entflohenes oder ausgesetztes Pokémon hierher.</p>
-        <p><strong>Park:</strong><br>Von Menschenhand angelegte Parks mit Springbrunnen, Blumenwiesen oder Seen und kleinen Wäldern, Stadt Pokémon sowie zutrauliche wilde Pokémon treffen hier aufeinander.</p>
-      </div>
-      <div class="description-box" style="background-color:#b0c3cd">
-        <p><strong>See:</strong><br>Ruhige Quellen in verwunschenen Wäldern, durch Wiesen plätschernde Bäche oder reißende Ströme, die meisten entspringen oder münden in großen Süßwasser Seen.</p>
-        <p><strong>Ozean:</strong><br>Die unendlichen Weiten des Ozeans, tausende Tonnen an Meerwasser, nur gelegentlich unterbrochen von kleinen Inseln, Riffen oder Felsen. Niemand weiß wie viele noch unbekannte Pokémon sich in den Tiefen des Ozeans verbergen.</p>
-        <p><strong>Strand:</strong><br>Geprägt von sandigen Stränden oder Felsklippen, der Übergang zwischen Meer und Landmasse erscheint schmal, aber bietet einen Lebensraum denjenigen Pokémon, die die salzige Wassernähe zum Ozean suchen, ohne auf festen Untergrund verzichten zu wollen.</p>
-      </div>
-      <div class="description-box" style="background-color:#b6cdb0">
-        <p><strong>Wald:</strong><br>Wälder bieten vielen eine Zuflucht mit dichten Blätterkronen oben und Sträuchern und Buschwerk unten. Egal ob Nadel-, Laub- oder Mischwald, ob tropisch oder boreal, Wälder sind so mannigfaltig wie ihre Bewohner.</p>
-        <p><strong>Wiese:</strong><br>Hügellandschaften, wilde Blumenwiesen oder grünes Flachland, das wohl mildeste Terrain in dem sich wilde Pokémon aufhalten können.</p>
-        <p><strong>Sumpf:</strong><br>Sümpfe sind ein abwechslungsreiches Biotop. Neben Moor Ödland, dass nur in flachen Gegenden vorkommt, gibt es nährstoffreiche Sümpfe, durchzogen von Mangroven und anderen Wäldern, mit steigenden und sinkenden Wasserpegeln und Röhricht-Landschaften, die in der Nähe von Ufern oder Brackgewässern entstehen.</p>
-      </div>
-      <div class="description-box" style="background-color:#cdc1b0">
-        <p><strong>Berg:</strong><br>Von den eisigen Bergspitzen, über Schluchten und zerklüftetes Gebiet, bis hinunter ins Tal, in den Bergen finden eine Vielzahl an Überlebensspezialisten ein Zuhause. </p>
-        <p><strong>Höhle:</strong><br>Höhlen kommen einzeln als Übernachtungsstätte für Ursaringe vor, oder als komplexe Systeme, die einen Übergang zwischen Außenwelt und Untergrund darstellen. Sie bieten Schutz vor Sonne und Schnee und schwankenden Temperaturen.</p>
-        <p><strong>Untergrund:</strong><br>Unterhalb von Städten befinden sich Kanalisationen, diese wirken wie ein schlechter Lebensraum, aber auch sie sind nicht unbewohnt. Ebenso wie tiefe Höhlensysteme weit unter der Erde sind sie eine Nische für speziell angepasste Pokémon. </p>
-      </div>
-      <div class="description-box" style="background-color:#cdb0b0">
-        <p><strong>Wüste:</strong><br>Wüsten haben vor allem eines gemeinsam, sie sind trocken und karg. Neben der bekannten Sandwüste, kommen auch Kies-, Stein- oder Salzwüsten vor. Für viele Pokémon und Menschen ist es undenkbar hier zu leben, aber für manche Pokémon sind sie genau der richtige Ort, um sich wohlzufühlen.</p>
-        <p><strong>Geröll:</strong><br>Steppen und Gerölllandschaften sind nicht ganz so arm an Vegetation wie Wüsten und bilden oft einen Übergang zu reicheren Biotopen. Sie bestehen aus Silikat-, Schiefer- oder Kalkgestein sowie Schutt und groben Steinfelsen. In Felsnischen und an Bergwände klammern sich kleine Pflanzen mit genug Kraft, um Wind und Wetter zu überstehen.</p>
-        <p><strong>Ruine:</strong><br>Verlassene menschliche Stätten, zurückerobert von Natur und wilden Pokémon, Ruinen sind zum einem mysteriös, zum anderen beklemmend und gruselig.</p>
-      </div>
+      <div class="description-box" id="biomInfoGroup1"></div>
+      <div class="description-box" id="biomInfoGroup2"></div>
+      <div class="description-box" id="biomInfoGroup3"></div>
+      <div class="description-box" id="biomInfoGroup4"></div>
+      <div class="description-box" id="biomInfoGroup5"></div>
     </div>
-    <script src="src/script.js"></script>
+    <script src="src/searchScript.js"></script>
+    <script src="src/siteBuild.js"></script>
   </body>
 </html>

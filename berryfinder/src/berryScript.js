@@ -1,5 +1,5 @@
 let completeList = []
-fetch('./../src/BerryTable.json')
+fetch('./src/BerryTable.json')
   .then(resp => resp.json())
   .then(data => {completeList = data});
 

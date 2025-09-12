@@ -8,8 +8,9 @@ body {
 h1 {
   color: #fcbe24;
 }
-p {
-  margin: 1% 1%;
+h3 {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 img {
   max-width: 100%;
@@ -34,7 +35,7 @@ input {
 .centered {
   align-self: center;
 }
-.flex-container {
+.choice-container {
   display: flex;
   flex-wrap: wrap;
   margin: auto;
@@ -47,6 +48,11 @@ input {
   flex-direction: column;
   justify-content: flex-end;
   max-width: 170px;
+}
+.result-info-box {
+  display: flex;
+  color: white;
+  gap: 5px;
 }
 .pkmn-box {
   display: flex;
@@ -93,7 +99,7 @@ input {
 .description-box {
   border-radius: 10px;
   max-width: 1000px;
-  padding: 10px;
+  padding: 20px;
   margin: 5px auto;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
   overflow: hidden;
@@ -123,7 +129,7 @@ input {
 }
 .pkmn-photo {
   float: left;
-  min-width: 50px;
+  width: 128px;
 }
 .type-photo {
   max-width: 40px;
@@ -158,6 +164,21 @@ input {
   text-align: center;
   font-size: 10pt;
   margin: 5px 0 0 auto;
+}
+#biomInfoGroup1{
+  background-color:#dcdcdc
+}
+#biomInfoGroup2{
+  background-color:#b0c3cd
+}
+#biomInfoGroup3{
+  background-color:#b6cdb0
+}
+#biomInfoGroup4{
+  background-color:#cdc1b0
+}
+#biomInfoGroup5{
+  background-color:#cdb0b0
 }
 .Normal{
   background-color: #DDDDDD;
