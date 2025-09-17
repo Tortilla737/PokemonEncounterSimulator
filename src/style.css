@@ -32,15 +32,18 @@ input {
   max-width: 156px;
   font-size: 1rem;
 }
+label {
+  font-size: 1em;
+  color: white;
+}
 .centered {
   align-self: center;
 }
 .choice-container {
   display: flex;
   flex-wrap: wrap;
-  margin: auto;
   gap: 10px;
-  max-width: 1000px;
+  padding: 10px;
   justify-content: center;
 }
 .flex-item {
@@ -53,6 +56,8 @@ input {
   display: flex;
   color: white;
   gap: 5px;
+  max-width: 1000px;
+  margin: auto;
 }
 .pkmn-box {
   display: flex;
@@ -138,7 +143,7 @@ input {
   max-width: 30px;
   margin-right: 30px;
 }
-.button {
+button {
   border-radius: 15px;
   border: none;
   color: white;
@@ -148,11 +153,16 @@ input {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
   cursor: pointer;
 }
 .button3 {
   background-color: #324f5f;
+}
+.reset-button {
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 10pt;
+  height: 50%;
 }
 .button-title {
   max-width: 90px;
@@ -165,6 +175,65 @@ input {
   font-size: 10pt;
   margin: 5px 0 0 auto;
 }
+.folding-section {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+/* This class is toggled by JS to open the div */
+.folding-section.is-open {
+  padding-bottom: 0px;
+}
+
+.accordion-item {
+  border-radius: 18px;
+  background-color: #2b2b2b;
+  padding: 4px; /* Padding for when it's open */
+  max-width: 1000px;
+  margin: auto;
+}
+
+.toggle-button {
+  width: 100%;
+  background-color: #5f5c5c;
+  text-align: left;
+  /* Make room for the triangle and align text */
+  position: relative;
+  padding-left: 30px; /* Add space for the triangle */
+}
+
+.toggle-button::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  
+  /* The CSS triangle trick */
+  border-left: 10px solid currentColor; /* This is the visible part of the triangle */
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  
+  /* Animate the rotation */
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.3s ease-out;
+}
+
+/* This class will be added via JS when the button is active */
+.toggle-button.active::before {
+  /* Rotate the triangle 90 degrees to point down */
+  transform: translateY(-50%) rotate(90deg);
+}
+
+#topButton{
+  position:fixed;
+  bottom:10px;
+  right:10px;
+  z-index:99;
+  padding: 8px 16px;
+}
+/*
+#region: single colors
+*/
 #biomInfoGroup1{
   background-color:#dcdcdc
 }

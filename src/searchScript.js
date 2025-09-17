@@ -11,6 +11,7 @@ let fatChance = 500;     //36
 
 //#region render function
 function renderResults(isRandom){
+  //wie Unterschied zwischen isRandom true/false? xxx
   filteredList = filterByCriteria(completeList);
   document.getElementById('numberOfResultsField').innerText = filteredList.length;
   if(filteredList.length > 0){

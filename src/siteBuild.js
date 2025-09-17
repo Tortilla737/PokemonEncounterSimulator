@@ -7,6 +7,24 @@ fetch('./src/PropertyKeys.json')
     getRegionCheckboxes();
     getSpecialCheckboxes();
     regionCheckboxes.forEach(box => box.checked = true); //start with all regions checked
+    
+    //Die faltbaren Sektionen können erst als offen initialisiert werden, nachdem der Inhalt geladen wurde.
+    const initiallyOpenDivs = document.querySelectorAll('.folding-section.is-open');
+    initiallyOpenDivs.forEach(div => {
+        const button = div.previousElementSibling;
+        button.classList.add('active'); 
+        // 1. Temporarily disable the transition
+        div.style.transition = 'none';
+        
+        // 2. Set the height so it's open
+        div.style.maxHeight = div.scrollHeight + 'px';
+
+        // 3. Use a timeout to re-enable the transition after the initial render
+        // This ensures future clicks will be animated.
+        setTimeout(() => {
+            div.style.transition = '';
+        }, 10); // A very short delay is all that's needed
+    });
   })
   .catch(error => console.error(error));
 
@@ -52,9 +70,11 @@ const buttonReset = document.getElementById("buttonResetAll");
 
 buttonGo.addEventListener('click', e =>{
   renderResults(true);
+  foldFoldables();
 })
 buttonList.addEventListener('click', e =>{
   renderResults(false);
+  foldFoldables();
 })
 
 buttonReset.addEventListener('click', e =>{
@@ -83,3 +103,33 @@ const buttonToTop = document.getElementById("topButton");
 buttonToTop.addEventListener('click', e =>{
     window.scrollTo({top: 0, behavior: 'smooth'});
 })
+
+//accordion buttons
+const accordionButtons = document.querySelectorAll('.toggle-button');
+
+accordionButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    button.classList.toggle('active'); // Toggles the .active class for the triangle rotation
+
+    // Find the foldable div that is the next sibling of the button. Make sure its a foldable-section
+    const foldables = button.nextElementSibling;
+    
+    foldables.classList.toggle('is-open');
+
+    if (foldables.classList.contains('is-open')) {
+      foldables.style.maxHeight = foldables.scrollHeight + 'px';
+    } else {
+      foldables.style.maxHeight = '0px';
+    }
+  });
+});
+
+function foldFoldables(){
+    const foldables = document.querySelectorAll('.folding-section');
+    foldables.forEach(section => {
+        const button = section.previousElementSibling;
+        button.classList.remove('active'); 
+        section.classList.remove('is-open');
+        section.style.maxHeight = '0px';
+    });
+}

@@ -12,177 +12,189 @@
       <a href="berryfinder/index.html">Berry finder</a>
     </div>
     <h1 style="text-align: center;">Pokémon encounter simulator</h1>
-    <!--MARK: Dropdowns-->
-    <div class="choice-container" id="choiceContainer">
-      <div class="flex-item">
-        <p class="description-small">Biom:<br>Wähle ein Biom, in dem ihr euch aufhaltet.</p>
-        <select id="biomsDrop1">
-          <option value="Egal">Biom 1</option>
-          <optgroup label="Urban">
-            <option value="Stadt">Stadt</option>
-            <option value="Industrie">Industrie</option>
-            <option value="Park">Park</option>
-          </optgroup>
-          <optgroup label="Aquatisch">
-            <option value="See">See</option>
-            <option value="Ozean">Ozean</option>
-            <option value="Strand">Strand</option>
-          </optgroup>
-          <optgroup label="Flora">
-            <option value="Wald">Wald</option>
-            <option value="Wiese">Wiese</option>
-            <option value="Sumpf">Sumpf</option>
-          </optgroup>
-          <optgroup label="Gebirge">
-            <option value="Berg">Berg</option>
-            <option value="Höhle">Höhle</option>
-            <option value="Untergrund">Untergrund</option>
-          </optgroup>
-          <optgroup label="Ödland">
-            <option value="Wüste">Wüste</option>
-            <option value="Geröll">Geröll</option>
-            <option value="Ruine">Ruine</option>
-          </optgroup>
-        </select>
-      </div>
-      <div class="flex-item">
-        <p class="description-small">Biom 2:<br>Ein zweites Biom schrängt die Suche ein. Es kommen nur Pokémon in Frage, die in beiden Biomen vorkommen.</p>
-        <select id="biomsDrop2">
-          <option value="Egal">Biom 2</option>
-          <optgroup label="Urban">
-            <option value="Stadt">Stadt</option>
-            <option value="Industrie">Industrie</option>
-            <option value="Park">Park</option>
-          </optgroup>
-          <optgroup label="Aquatisch">
-            <option value="See">See</option>
-            <option value="Ozean">Ozean</option>
-            <option value="Strand">Strand</option>
-          </optgroup>
-          <optgroup label="Flora">
-            <option value="Wald">Wald</option>
-            <option value="Wiese">Wiese</option>
-            <option value="Sumpf">Sumpf</option>
-          </optgroup>
-          <optgroup label="Gebirge">
-            <option value="Berg">Berg</option>
-            <option value="Höhle">Höhle</option>
-            <option value="Untergrund">Untergrund</option>
-          </optgroup>
-          <optgroup label="Ödland">
-            <option value="Wüste">Wüste</option>
-            <option value="Geröll">Geröll</option>
-            <option value="Ruine">Ruine</option>
-          </optgroup>
-        </select>
-      </div>
-      <div class="flex-item">
-        <p class="description-small">Wetter:<br>Wähle eine besondere Wetterlage.<br>Dies schließt nur Pokémon ein, die sich bei diesem Wetter wohl fühlen.</p>
-        <select id="weatherDrop">
-          <option value="Egal">Wetter</option>
-          <option value="Sonne">Sonne</option>
-          <option value="Regen">Regen</option>
-          <option value="Schnee">Schnee</option>
-        </select>
-      </div>
-      <div class="flex-item">
-        <p class="description-small">Tageszeit:<br>Pokémon, die am Tag aktiv sind, werden nachts ausgeschlossen und umgekehrt. Viele Pokémon kann man jedoch zu jeder Tageszeit antreffen.</p>
-        <select id="daytimeDrop">
-          <option value="Egal">Tageszeit</option>
-          <option value="Tag">Tag</option>
-          <option value="Nacht">Nacht</option>
-        </select>
-      </div>
-      <div class="flex-item">
-        <p class="description-small">Anzahl:<br>Wähle wie viele wilde Pokémon auftauchen.</p>
-        <input type="number" id="numberField" name="Number Field" min="1" value="1">
-      </div>
-      <div class="flex-item">
-        <select id="typeDrop">
-          <option value="Egal">Typ</option>
-          <option value="Normal">Normal</option>
-          <option value="Kampf">Kampf</option>
-          <option value="Flug">Flug</option>
-          <option value="Gift">Gift</option>
-          <option value="Boden">Boden</option>
-          <option value="Gestein">Gestein</option>
-          <option value="Käfer">Käfer</option>
-          <option value="Geist">Geist</option>
-          <option value="Stahl">Stahl</option>
-          <option value="Feuer">Feuer</option>
-          <option value="Wasser">Wasser</option>
-          <option value="Pflanze">Pflanze</option>
-          <option value="Elektro">Elektro</option>
-          <option value="Psycho">Psycho</option>
-          <option value="Eis">Eis</option>
-          <option value="Drache">Drache</option>
-          <option value="Unlicht">Unlicht</option>
-          <option value="Fee">Fee</option>
-        </select>
-      </div>
-      <div class="flex-item">
-        <select id="rankDrop">
-          <option value="Egal">Rang</option>
-          <option value="Starter">Starter</option>
-          <option value="Rookie">Rookie</option>
-          <option value="Standard">Standard</option>
-          <option value="Advanced">Advanced</option>
-          <option value="Expert">Expert</option>
-          <option value="Ace">Ace</option>
-        </select>
-      </div>
-    </div>
-    <!--MARK: Check Boxes-->
-    <div class="choice-container" id="regionContainer">
-      <div class="flex-item">
-        <label><input type="checkbox" id="checkRegion1">Kanto</label>
-        <label><input type="checkbox" id="checkRegion2">Johto</label>
-        <label><input type="checkbox" id="checkRegion3">Hoenn</label>
-      </div>
-      <div class="flex-item">
-        <label><input type="checkbox" id="checkRegion4">Sinnoh</label>
-        <label><input type="checkbox" id="checkRegion5">Einall (Unova)</label>
-        <label><input type="checkbox" id="checkRegion6">Kalos</label>
-      </div>
-      <div class="flex-item">
-        <label><input type="checkbox" id="checkRegion7">Alola</label>
-        <label><input type="checkbox" id="checkRegion8">Galar</label>
-        <label><input type="checkbox" id="checkRegion9">Hisui</label>
-      </div>
-      <div class="flex-item">
-        <label><input type="checkbox" id="checkRegion10">Paldea</label>
-      </div>
-      <div class="flex-item">
-        <div class="button button1" id="checkAllRegions">Alle</div>
-        <div class="button button3" id="checkNoRegions">Keine</div>
-      </div>
-    </div>
-    <div class="choice-container" id="regionContainer">
-      <div class="flex-item">
-        <label><input type="checkbox" id="checkSpecial1">Spezial</label>
-        <label><input type="checkbox" id="checkSpecial2">Paradox</label>
-        <label><input type="checkbox" id="checkSpecial3">Fossilien</label>
-      </div>
-      <div class="flex-item">
-        <div class="button button1" id="checkAllSpecials">Alle</div>
-        <div class="button button3" id="checkNoSpecials">Keine</div>
-      </div>
-    </div>
     
+    <div class="accordion-item">
+      <button class="toggle-button">Suchkriterien</button>
+      <div class="folding-section is-open">
+        <!--MARK: Dropdowns-->
+        <div class="choice-container" id="choiceContainer">
+          <div class="flex-item">
+            <p class="description-small">Biom:<br>Wähle ein Biom, in dem ihr euch aufhaltet.</p>
+            <select id="biomsDrop1">
+              <option value="Egal">Biom 1</option>
+              <optgroup label="Urban">
+                <option value="Stadt">Stadt</option>
+                <option value="Industrie">Industrie</option>
+                <option value="Park">Park</option>
+              </optgroup>
+              <optgroup label="Aquatisch">
+                <option value="See">See</option>
+                <option value="Ozean">Ozean</option>
+                <option value="Strand">Strand</option>
+              </optgroup>
+              <optgroup label="Flora">
+                <option value="Wald">Wald</option>
+                <option value="Wiese">Wiese</option>
+                <option value="Sumpf">Sumpf</option>
+              </optgroup>
+              <optgroup label="Gebirge">
+                <option value="Berg">Berg</option>
+                <option value="Höhle">Höhle</option>
+                <option value="Untergrund">Untergrund</option>
+              </optgroup>
+              <optgroup label="Ödland">
+                <option value="Wüste">Wüste</option>
+                <option value="Geröll">Geröll</option>
+                <option value="Ruine">Ruine</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="flex-item">
+            <p class="description-small">Biom 2:<br>Ein zweites Biom schrängt die Suche ein. Es kommen nur Pokémon in Frage, die in beiden Biomen vorkommen.</p>
+            <select id="biomsDrop2">
+              <option value="Egal">Biom 2</option>
+              <optgroup label="Urban">
+                <option value="Stadt">Stadt</option>
+                <option value="Industrie">Industrie</option>
+                <option value="Park">Park</option>
+              </optgroup>
+              <optgroup label="Aquatisch">
+                <option value="See">See</option>
+                <option value="Ozean">Ozean</option>
+                <option value="Strand">Strand</option>
+              </optgroup>
+              <optgroup label="Flora">
+                <option value="Wald">Wald</option>
+                <option value="Wiese">Wiese</option>
+                <option value="Sumpf">Sumpf</option>
+              </optgroup>
+              <optgroup label="Gebirge">
+                <option value="Berg">Berg</option>
+                <option value="Höhle">Höhle</option>
+                <option value="Untergrund">Untergrund</option>
+              </optgroup>
+              <optgroup label="Ödland">
+                <option value="Wüste">Wüste</option>
+                <option value="Geröll">Geröll</option>
+                <option value="Ruine">Ruine</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="flex-item">
+            <p class="description-small">Wetter:<br>Wähle eine besondere Wetterlage.<br>Dies schließt nur Pokémon ein, die sich bei diesem Wetter wohl fühlen.</p>
+            <select id="weatherDrop">
+              <option value="Egal">Wetter</option>
+              <option value="Sonne">Sonne</option>
+              <option value="Regen">Regen</option>
+              <option value="Schnee">Schnee</option>
+            </select>
+          </div>
+          <div class="flex-item">
+            <p class="description-small">Tageszeit:<br>Pokémon, die am Tag aktiv sind, werden nachts ausgeschlossen und umgekehrt. Viele Pokémon kann man jedoch zu jeder Tageszeit antreffen.</p>
+            <select id="daytimeDrop">
+              <option value="Egal">Tageszeit</option>
+              <option value="Tag">Tag</option>
+              <option value="Nacht">Nacht</option>
+            </select>
+          </div>
+          <div class="flex-item">
+            <p class="description-small">Anzahl:<br>Wähle wie viele wilde Pokémon auftauchen.</p>
+            <input type="number" id="numberField" name="Number Field" min="1" value="1">
+          </div>
+          <div class="flex-item">
+            <p class="description-small">Typ:<br>Nur Pokémon, die den angegebenen Typ haben, werden berücksichtigt.</p>
+            <select id="typeDrop">
+              <option value="Egal">Typ</option>
+              <option value="Normal">Normal</option>
+              <option value="Kampf">Kampf</option>
+              <option value="Flug">Flug</option>
+              <option value="Gift">Gift</option>
+              <option value="Boden">Boden</option>
+              <option value="Gestein">Gestein</option>
+              <option value="Käfer">Käfer</option>
+              <option value="Geist">Geist</option>
+              <option value="Stahl">Stahl</option>
+              <option value="Feuer">Feuer</option>
+              <option value="Wasser">Wasser</option>
+              <option value="Pflanze">Pflanze</option>
+              <option value="Elektro">Elektro</option>
+              <option value="Psycho">Psycho</option>
+              <option value="Eis">Eis</option>
+              <option value="Drache">Drache</option>
+              <option value="Unlicht">Unlicht</option>
+              <option value="Fee">Fee</option>
+            </select>
+          </div>
+          <div class="flex-item">
+            <p class="description-small">Rang:<br>Nur Pokémon, die den ausgewählten Rang als empfohlenen Rang im Regelbuch haben, werden berücksichtigt.</p>
+            <select id="rankDrop">
+              <option value="Egal">Rang</option>
+              <option value="Starter">Starter</option>
+              <option value="Rookie">Rookie</option>
+              <option value="Standard">Standard</option>
+              <option value="Advanced">Advanced</option>
+              <option value="Expert">Expert</option>
+              <option value="Ace">Ace</option>
+            </select>
+          </div>
+        </div>
+        <!--MARK: Check Boxes-->
+        <div class="choice-container" id="regionContainer">
+          <div class="flex-item">
+            <label><input type="checkbox" id="checkRegion1">Kanto</label>
+            <label><input type="checkbox" id="checkRegion2">Johto</label>
+            <label><input type="checkbox" id="checkRegion3">Hoenn</label>
+          </div>
+          <div class="flex-item">
+            <label><input type="checkbox" id="checkRegion4">Sinnoh</label>
+            <label><input type="checkbox" id="checkRegion5">Einall (Unova)</label>
+            <label><input type="checkbox" id="checkRegion6">Kalos</label>
+          </div>
+          <div class="flex-item">
+            <label><input type="checkbox" id="checkRegion7">Alola</label>
+            <label><input type="checkbox" id="checkRegion8">Galar</label>
+            <label><input type="checkbox" id="checkRegion9">Hisui</label>
+          </div>
+          <div class="flex-item">
+            <label><input type="checkbox" id="checkRegion10">Paldea</label>
+          </div>
+          <div class="flex-item">
+            <button class="button1 reset-button" id="checkAllRegions">Alle</button>
+            <button class="button3 reset-button" id="checkNoRegions">Keine</button>
+          </div>
+        </div>
+        <div class="choice-container" id="regionContainer">
+          <div class="flex-item">
+            <label><input type="checkbox" id="checkSpecial1">Spezial</label>
+            <label><input type="checkbox" id="checkSpecial2">Paradox</label>
+            <label><input type="checkbox" id="checkSpecial3">Fossilien</label>
+          </div>
+          <div class="flex-item">
+            <button class="button1 reset-button" id="checkAllSpecials">Alle</button>
+            <button class="button3 reset-button" id="checkNoSpecials">Keine</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--MARK: Buttons-->
     <div align="center" style="margin: 20px">
-      <div class="button button1" id="buttonGoRandom">Los geht's!</div>
-      <div class="button button2" id="buttonShowAll">Alle anzeigen</div>
-      <div class="button button3" id="buttonResetAll">Zurücksetzen</div>
+      <button class="button1" id="buttonGoRandom">Los geht's!</button>
+      <button class="button2" id="buttonShowAll">Alle anzeigen</button>
+      <button class="button3" id="buttonResetAll">Zurücksetzen</button>
     </div>
     <div class="result-info-box"><p>Ergebnisse: </p><p id="numberOfResultsField"></p></div>
-    <div id="listSpace"></div>
-    <div id="descriptions">
-      <div class="description-box" id="biomInfoGroup1"></div>
-      <div class="description-box" id="biomInfoGroup2"></div>
-      <div class="description-box" id="biomInfoGroup3"></div>
-      <div class="description-box" id="biomInfoGroup4"></div>
-      <div class="description-box" id="biomInfoGroup5"></div>
+    <!--MARK: Biom Descriptions-->
+    <div class="accordion-item">
+      <button class="toggle-button">Informationen zu den Biomen</button>
+      <div class="folding-section is-open" id="descriptions">
+        <div class="description-box" id="biomInfoGroup1"></div>
+        <div class="description-box" id="biomInfoGroup2"></div>
+        <div class="description-box" id="biomInfoGroup3"></div>
+        <div class="description-box" id="biomInfoGroup4"></div>
+        <div class="description-box" id="biomInfoGroup5"></div>
+      </div>
     </div>
+    <div id="listSpace"></div>
     <div>
       <button class="button" id="topButton" title="Go to top">Top</button>
     </div>
