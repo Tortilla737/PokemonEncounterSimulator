@@ -11,7 +11,7 @@ fetch('./src/PropertyKeys.json')
   .catch(error => console.error(error));
 
 
-//gather all Region checkboxes
+//gather all 'Region' checkboxes
 const regionCheckboxes = [];
 function getRegionCheckboxes(){
     for(let i=0; i<keys['Regions'].length; i++){
@@ -28,7 +28,7 @@ buttonNoRegions.addEventListener('click', e =>{
     regionCheckboxes.forEach(box => box.checked = false);
 })
 
-//gather all Special checkboxes
+//gather all 'Special' checkboxes
 const specialCheckboxes = [];
 function getSpecialCheckboxes(){
     for(let i=0; i<keys['Specials'].length; i++){
@@ -45,13 +45,41 @@ buttonNoSpecials.addEventListener('click', e =>{
     specialCheckboxes.forEach(box => box.checked = false);
 })
 
-//fill biom info boxes from json
+//go buttons
+const buttonGo = document.getElementById("buttonGoRandom");
+const buttonList = document.getElementById("buttonShowAll");
+const buttonReset = document.getElementById("buttonResetAll");
+
+buttonGo.addEventListener('click', e =>{
+  renderResults(true);
+})
+buttonList.addEventListener('click', e =>{
+  renderResults(false);
+})
+
+buttonReset.addEventListener('click', e =>{
+  document.getElementById('typeDrop').value = 'Egal';
+  document.getElementById('biomsDrop1').value = 'Egal';
+  document.getElementById('biomsDrop2').value = 'Egal';
+  document.getElementById('weatherDrop').value = 'Egal';
+  document.getElementById('daytimeDrop').value = 'Egal';
+  document.getElementById('rankDrop').value = 'Egal';
+  regionCheckboxes.forEach(box => box.checked = true);
+  specialCheckboxes.forEach(box => box.checked = false);
+})
+
+//fill biom info boxes from json data
 function fillBiomInfoBoxes(){
     for(let i=0; i<keys['Bioms'].length; i++){
-        console.log(1+Math.floor(i/3));
         document.getElementById('biomInfoGroup'+(1+Math.floor(i/3))).innerHTML += `
         <h3>${keys['Bioms'][i].Name}</h3>
         <p>${keys['Bioms'][i].Description}</p>
         `;
     }
 }
+
+//Back to top button
+const buttonToTop = document.getElementById("topButton");
+buttonToTop.addEventListener('click', e =>{
+    window.scrollTo({top: 0, behavior: 'smooth'});
+})

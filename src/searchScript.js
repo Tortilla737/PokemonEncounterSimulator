@@ -4,26 +4,21 @@ fetch('./src/PokemonTable.json')
   .then(data => {completeList = data})
   .catch(error => console.error(error));
 
-const buttonList = document.getElementById("buttonShowAll");
-const buttonGo = document.getElementById("buttonGoRandom");
-const buttonReset = document.getElementById("buttonResetAll");
 let filteredList = completeList;
-let commonRarity = 48;
-let uncommonRarity = 32;
-let rareRarity = 15;
-let mythicRarity = 5;
+let rarityDistribution = [44,32,16,8]; //common, uncommon, rare, very rare. Die Länge dieses Array muss der Anzahl der möglichen Rarities entsprechen
 let shinyChance = 4069; //4069
 let fatChance = 500;     //36
 
-//#region Button Listeners
-buttonGo.addEventListener('click', e =>{
+//#region render function
+function renderResults(isRandom){
   filteredList = filterByCriteria(completeList);
   document.getElementById('numberOfResultsField').innerText = filteredList.length;
   if(filteredList.length > 0){
-    filteredList = gatherRandoms(filteredList, document.getElementById('numberField').value);
-    document.getElementById('listSpace').innerHTML = `
-    ${filteredList.map(pokemonRandomTemplate).join('')}
-    `;
+    if(isRandom){
+      filteredList = gatherRandoms(filteredList, document.getElementById('numberField').value);
+    }
+    let displayElements = 1;
+    document.getElementById('listSpace').innerHTML = filteredList.map(pokemonTemplate).join('');
   }
   else{
     document.getElementById('listSpace').innerHTML = `
@@ -32,63 +27,10 @@ buttonGo.addEventListener('click', e =>{
     </div>
     `;
   }
-})
-
-buttonList.addEventListener('click', e =>{
-  filteredList = filterByCriteria(completeList);
-  document.getElementById('numberOfResultsField').innerText = filteredList.length;
-  if(filteredList.length > 0){
-    document.getElementById('listSpace').innerHTML = `
-    ${filteredList.map(pokemonTemplate).join('')}
-    `;
-  }
-  else{
-    document.getElementById('listSpace').innerHTML = `
-    <div class="pkmn-box">
-      <h2 class="pkmn-name">Keine Einträge</h2>
-    </div>
-    `;
-  }
-})
-
-buttonReset.addEventListener('click', e =>{
-  document.getElementById('typeDrop').value = 'Egal';
-  document.getElementById('biomsDrop1').value = 'Egal';
-  document.getElementById('biomsDrop2').value = 'Egal';
-  document.getElementById('weatherDrop').value = 'Egal';
-  document.getElementById('daytimeDrop').value = 'Egal';
-  document.getElementById('rankDrop').value = 'Egal';
-  regionCheckboxes.forEach(box => box.checked = true);
-  specialCheckboxes.forEach(box => box.checked = false);
-})
+}
 
 //#region Box Templates
 function pokemonTemplate(pkmn){
-  return `
-  <div class="pkmn-box ${pkmn.type1}">
-    <img class="pkmn-photo" src="./pics/${pkmn.number}.png">
-    <div class="pkmn-text-box">
-      <p class="english-name">#${pkmn.number}</p>
-      <p class="pkmn-name">${pkmn.name}</p>
-      <p class="english-name">${pkmn.nameEnglish}</p>
-      <div class="rank-box">
-        <img class="rank-photo" src="./icons/${pkmn.rank}.svg">
-        <p class="english-name">${pkmn.rank}</p>
-      </div>
-    </div>
-    <div class="pkmn-right-box">
-      <p class="centered">Typ:</p>
-      <div class="type-box">
-        <img class="type-photo" src="./icons/${pkmn.type1}.svg">
-        <p class="english-name">${pkmn.type1}</p>
-      </div>
-      ${checkType2(pkmn)}
-    </div>
-  </div>
-  `
-}
-
-function pokemonRandomTemplate(pkmn){
   let gender = getGender(pkmn);
   return `
   <div class="pkmn-box ${pkmn.type1}">
@@ -96,11 +38,11 @@ function pokemonRandomTemplate(pkmn){
     <div class="pkmn-text-box">
       <p class="english-name">#${pkmn.number}</p>
       <p class="pkmn-name">${pkmn.name}</p>
-      <p class="english-name">${genderF(gender)}</p>
+      <p class="english-name">${genderSym(gender)}</p>
       <p class="english-name">${pkmn.nameEnglish}</p>
       <div class="rank-box">
-        <p class="english-name">${pkmn.rank}</p>
         <img class="rank-photo" src="./icons/${pkmn.rank}.svg">
+        <p class="english-name">${pkmn.rank}</p>
       </div>
       ${checkStatus(pkmn)}
     </div>
@@ -119,7 +61,7 @@ function pokemonRandomTemplate(pkmn){
 //#region Determine Randoms
 function getGender(entry){
   if(entry.maleChance !== null){
-    if(entry.maleChance < (Math.floor(Math.random() *100)+1)){
+    if(entry.maleChance > (Math.floor(Math.random() *100)+1)){
       return 'm'
     }
     else{
@@ -149,7 +91,7 @@ function getPic(entry, gender){
   }
 }
 
-function genderF(gender){
+function genderSym(gender){
   if(gender == 'f'){
     return '♀'
   }
@@ -287,24 +229,51 @@ function compareSpecials(entry) {
 }
 
 function filterByRarity(contenderList){
-  //revise xxx
   if('Egal' == document.getElementById('rankDrop').value){
-    let determinedRarity = Math.floor(Math.random() * 100);
-    if(determinedRarity<=commonRarity){determinedRarity=1}
-    else if(determinedRarity>commonRarity && determinedRarity<(commonRarity+uncommonRarity)){determinedRarity=2}
-    else if(determinedRarity>(commonRarity+uncommonRarity) && determinedRarity<(commonRarity+uncommonRarity+rareRarity)){determinedRarity=3}
-    else{determinedRarity=4}
-    return contenderList.filter((entry) => entry.rarity == determinedRarity)
+    //1. Es wird gesucht, welche "rarities" in contenderList enthalten sind. So kann nicht fälschlicherweise ein "very rare" ausgewählt werden, wenn nur "common" und "uncommon" in contenderList sind
+    includedRarities = contenderList.map(entry => entry.rarity).filter((value, index, self) => self.indexOf(value) === index);
+    includedRarities = includedRarities.sort((a,b) => a - b)
+
+    let rarityTotal = 0;
+    includedRarities.forEach(element => {
+      rarityTotal += rarityDistribution[element-1];
+    }); //Summe aller enthaltenen rarity distribution values, damit die zufällige Zahl korrekt skaliert wird
+    let includedDistributions = [];
+    includedRarities.forEach(element => {
+      includedDistributions.push(rarityDistribution[element-1]);
+    }); //Array der enthaltenen distribution values, um später die korrektern Verhältnisse zu vergleichen
+
+    let determinedRarity = Math.floor(Math.random() * rarityTotal);
+    determinedRarity = findRarityIndex(includedDistributions, determinedRarity);
+    //2. Es wird eine zufällige Zahl zwischen 0 und der Summe der enthaltenen rarity distribution values generiert
+    //3. Für jede Stufe der enthaltenen rarity distribution values wird geprüft, ob die zufällige Zahl in den Bereich dieser Stufe fällt
+
+    return contenderList.filter((entry) => entry.rarity == includedRarities[determinedRarity])
+    //4. Der entsprechende Index wird an die enthaltenen Rarities gemappt und die contenderList danach gefiltert
   }
   else{
     return contenderList
   }
 }
 
+function findRarityIndex(distribution, number) {
+  let cumulative = 0;
+  for (let i = 0; i < distribution.length; i++) {
+    cumulative += distribution[i];
+    if (number < cumulative) {
+      return i; // Gibt den Index (0, 1, 2, oder 3) zurück
+    }
+  }
+  return distribution.length - 1; // Fallback für den seltensten Fall
+}
+
+
 /*
-elegantere Lösung für rarity distribution
+Sektionen zusammenklappen
 
 Typ Box background color = Typ Icon background color
 
 Offizielle Beeren Stats
+
+Wesen bei getRandoms ergänzen
 */
